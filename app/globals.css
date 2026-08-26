@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  /* SAW 深色工业科技配色 */
+  --background: #0a0e1a;
+  --foreground: #e2e8f0;
+  --primary: #1e293b;
+  --accent-blue: #3b82f6;
+  --accent-orange: #f97316;
+  --border: #334155;
+  --muted: #64748b;
+  --card-bg: #111827;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-orange: var(--accent-orange);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-card-bg: var(--card-bg);
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* 工业网格背景 */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* 渐变边框效果 */
+.gradient-border {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 8px;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-orange));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* 视频覆盖层 */
+.video-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 14, 26, 0.7) 0%,
+    rgba(10, 14, 26, 0.85) 50%,
+    rgba(10, 14, 26, 0.95) 100%
+  );
+}
+
+/* 发光效果 */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.glow-orange {
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+}
+
+/* 进度条 */
+.progress-bar {
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-orange));
+  border-radius: 4px;
+  height: 4px;
+}
