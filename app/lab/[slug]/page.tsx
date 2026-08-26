@@ -90,9 +90,13 @@ export function generateStaticParams() {
   return Object.keys(articles).map((slug) => ({ slug }));
 }
 
-export default function LabPostPage({ params }: { params: { slug: string } }) {
-  const article = articles[params.slug];
-  if (!article) notFound();
+export default async function LabPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const article = articles[slug];
+  
+  if (!article) {
+    notFound();
+  }
 
   const blocks = article.content.split("\n\n");
 
