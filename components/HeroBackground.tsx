@@ -19,8 +19,7 @@ export default function HeroBackground() {
         animation: "scan 8s linear infinite"
       }} />
       
-      {/* 视频占位（待真实素材） */}
-      {/*
+      {/* AI 概念视频 */}
       <video
         autoPlay
         muted
@@ -33,7 +32,6 @@ export default function HeroBackground() {
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a0e1a]/70 via-[#1a1a2e]/60 to-[#0f172a]/80" />
-      */}
     </div>
   );
 }

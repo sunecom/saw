@@ -57,13 +57,9 @@ export default function SolutionsPage() {
               <div><h3 className="mb-2 font-semibold text-foreground">SAW 解决方案</h3><ul className="space-y-1 text-sm text-muted"><li>• 机器人友好型支架设计</li><li>• 简化施工工序验证</li><li>• 数据闭环优化</li></ul></div>
             </div>
             <div className="relative h-64 overflow-hidden rounded-lg border border-border md:h-80">
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-accent-orange/5 to-accent-blue/5">
-                <div className="text-center">
-                  <div className="mb-4 text-6xl">🏗️</div>
-                  <p className="text-sm text-muted">SAW Carport 场景</p>
-                  <p className="text-xs text-muted/60">（待添加实景/渲染图）</p>
-                </div>
-              </div>
+              <Image src="/carport-render.webp" alt="SAW Carport 概念渲染图" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              <div className="absolute bottom-4 left-4 text-sm text-muted">SAW Carport 概念渲染</div>
             </div>
           </div>
           <div className="mt-8 border-t border-border pt-6">

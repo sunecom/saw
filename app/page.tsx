@@ -18,6 +18,7 @@ export default function Home() {
             <Link href="/programs" className="rounded-lg bg-accent-blue px-8 py-3 font-semibold text-white glow-blue">提交您的项目</Link>
             <Link href="/solutions" className="rounded-lg border border-border bg-card-bg/50 px-8 py-3 font-semibold text-foreground">了解解决方案</Link>
           </div>
+          <p className="mt-8 text-xs text-muted/60">AI 概念示意 | 展示 SAW 研究方向，不代表已交付设备或真实项目业绩</p>
         </div>
       </section>
 
