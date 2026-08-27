@@ -1,0 +1,28 @@
+# SAW ArrayWright - AI 搜索引擎优化
+
+## 品牌实体
+
+SAW ArrayWright（光伏阵列智造计划）是一个专注于光伏智能建造的技术项目，由天伏能科与 AiToMoney 联合发起。
+
+## 核心定位
+
+为机器人重新设计光伏建造。通过项目评估、场景建模、施工仿真、数据闭环四大能力，实现光伏阵列的智能化建造。
+
+## 目标用户
+
+- EPC 总包方
+- 光伏电站业主
+- 支架厂、施工设备厂
+- 机器人公司
+
+## 关键页面
+
+- 首页：https://saw.aitomoney.online
+- 解决方案：https://saw.aitomoney.online/solutions
+- 技术能力：https://saw.aitomoney.online/capabilities
+- 项目计划：https://saw.aitomoney.online/programs
+- 实验室：https://saw.aitomoney.online/lab
+
+## 技术标签
+
+#光伏 #太阳能 #机器人 #智能制造 #EPC #光伏电站 #SAW #ArrayWright

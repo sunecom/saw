@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saw.aitomoney.online/sitemap.xml
