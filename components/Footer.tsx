@@ -31,8 +31,8 @@ export default function Footer() {
           <div>
             <h4 className="mb-4 text-sm font-semibold text-foreground">联系</h4>
             <ul className="space-y-2 text-sm text-muted">
-              <li>合作咨询：contact@saw-arraywright.com</li>
-              <li>技术支持：support@saw-arraywright.com</li>
+              <li>合作咨询：<a href="mailto:contact@saw-arraywright.com" className="hover:text-foreground">contact@saw-arraywright.com</a></li>
+              <li>隐私问题：<a href="mailto:privacy@saw-arraywright.com" className="hover:text-foreground">privacy@saw-arraywright.com</a></li>
             </ul>
           </div>
 
