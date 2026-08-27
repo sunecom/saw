@@ -88,12 +88,12 @@ export async function POST(request: Request) {
 
     // 处理项目类型（多选）
     if (data.projectType && data.projectType.length > 0) {
-      fields["项目类型"] = data.projectType;
+      fields["项目类型"] = data.projectType.join(", ");
     }
 
     // 处理已有资料（多选）
     if (data.materials && data.materials.length > 0) {
-      fields["已有资料"] = data.materials;
+      fields["已有资料"] = data.materials.join(", ");
     }
 
     const res = await client.bitable.appTableRecord.create({
@@ -113,6 +113,38 @@ export async function POST(request: Request) {
     }
 
     console.log("Lead saved to bitable:", res.data?.record?.record_id);
+    // 发送飞书群通知
+    try {
+      const chatId = process.env.FEISHU_NOTIFY_CHAT_ID;
+      if (chatId) {
+        const notifyText = [
+          "🔔 新项目线索",
+          "姓名：" + data.name,
+          "公司：" + (data.company || "未提供"),
+          "邮箱：" + data.email,
+          "电话：" + (data.phone || "未提供"),
+          "项目规模：" + (data.scale || "未提供"),
+          "项目地点：" + (data.location || "未提供"),
+          "当前阶段：" + (data.stage || "未提供"),
+          "项目类型：" + ((data.projectType && data.projectType.length) ? data.projectType.join(", ") : "未选择"),
+          "已有资料：" + ((data.materials && data.materials.length) ? data.materials.join(", ") : "未提供"),
+          "补充说明：" + (data.description || "无"),
+          "记录 ID：" + (res.data && res.data.record && res.data.record.record_id)
+        ].join(`\n`);
+        await client.im.message.create({
+          params: { receive_id_type: "chat_id" },
+          data: {
+            receive_id: chatId,
+            msg_type: "text",
+            content: JSON.stringify({ text: notifyText }),
+          },
+        });
+        console.log("Lead notified to chat:", chatId);
+      }
+    } catch (notifyErr) {
+      console.error("Notify error (non-fatal):", notifyErr);
+    }
+
     return NextResponse.json({ success: true, message: "提交成功，我们将在3个工作日内与您联系" });
   } catch (err) {
     console.error("Submit error:", err);
