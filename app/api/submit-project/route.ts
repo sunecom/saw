@@ -38,6 +38,7 @@ const leadSchema = z.object({
   stage: z.string().max(50).optional().default(""),
   materials: z.array(z.string()).optional(),
   description: z.string().max(2000, "描述不能超过 2000 字").optional().default(""),
+  consent: z.literal("true", { message: "请先阅读并同意隐私政策" }),
 });
 
 // 飞书客户端
@@ -81,6 +82,8 @@ export async function POST(request: Request) {
       "补充说明": data.description,
       "IP地址": ip,
       "提交时间": Date.now(),
+      "隐私授权时间": Date.now(),
+      "线索状态": "新线索",
     };
 
     // 处理项目类型（多选）

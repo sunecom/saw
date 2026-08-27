@@ -159,6 +159,7 @@ export default function ProjectForm() {
           required
           className="mt-1 h-4 w-4 rounded border-border bg-background text-accent-blue focus:ring-accent-blue" 
         />
+        <input type="hidden" name="consent" value={consent ? "true" : "false"} />
         <label htmlFor="consent" className="text-sm text-muted">
           我已阅读并同意 <a href="/privacy" className="text-accent-blue hover:underline" target="_blank">隐私政策</a>，授权 SAW 团队处理我提交的项目信息。
         </label>
