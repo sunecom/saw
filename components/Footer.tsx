@@ -6,11 +6,8 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-8 md:grid-cols-4">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-blue to-accent-orange">
-                <span className="text-sm font-bold text-white">S</span>
-              </div>
-              <span className="text-lg font-bold text-foreground">SAW</span>
+            <div className="mb-4">
+              <img src="/logo.png" alt="SAW ArrayWright" className="h-8 w-auto" />
             </div>
             <p className="text-sm text-muted">
               光伏阵列智造计划<br />
@@ -31,8 +28,8 @@ export default function Footer() {
           <div>
             <h4 className="mb-4 text-sm font-semibold text-foreground">联系</h4>
             <ul className="space-y-2 text-sm text-muted">
-              <li>合作咨询：<a href="mailto:contact@saw-arraywright.com" className="hover:text-foreground">contact@saw-arraywright.com</a></li>
-              <li>隐私问题：<a href="mailto:privacy@saw-arraywright.com" className="hover:text-foreground">privacy@saw-arraywright.com</a></li>
+              <li>合作咨询：<a href="mailto:12221634@qq.com" className="hover:text-foreground">12221634@qq.com</a></li>
+              <li>隐私问题：<a href="mailto:1952902717@qq.com" className="hover:text-foreground">1952902717@qq.com</a></li>
             </ul>
           </div>
 
@@ -45,7 +42,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-border/50 pt-8 text-center text-sm text-muted">
+        <div className="mt-12 border-t border-border/30 pt-8 text-center">
           <p>© 2026 SAW ArrayWright. 光伏阵列智造计划. All rights reserved.</p>
         </div>
       </div>

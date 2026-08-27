@@ -17,13 +17,8 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-accent-blue to-accent-orange">
-              <span className="text-lg font-bold text-white">S</span>
-            </div>
-            <div>
-              <span className="block text-lg font-bold text-foreground">SAW</span>
-              <span className="block text-xs text-muted">ArrayWright</span>
-            </div>
+            <img src="/logo.png" alt="SAW ArrayWright" className="h-14 w-auto" />
+              <span className="text-sm font-medium text-muted transition hover:text-foreground">SAW ARRAYWRIGHT</span>
           </Link>
 
           {/* 桌面导航 */}
@@ -44,7 +39,7 @@ export default function Header() {
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="flex h-10 w-10 items-center justify-center rounded-lg border border-border md:hidden"
-              aria-label="菜单"
+              aria-label="菜单" aria-expanded={mobileOpen} aria-controls="mobile-menu"
             >
               {mobileOpen ? (
                 <svg className="h-5 w-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,7 +56,7 @@ export default function Header() {
 
         {/* 移动端导航菜单 */}
         {mobileOpen && (
-          <nav className="mt-4 border-t border-border/50 pt-4 md:hidden">
+          <nav id="mobile-menu" className="mt-4 border-t border-border/50 pt-4 md:hidden">
             <div className="flex flex-col gap-3">
               {navItems.map((item) => (
                 <Link

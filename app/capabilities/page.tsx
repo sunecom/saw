@@ -1,10 +1,16 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/capabilities" },
+};
+
 export default function CapabilitiesPage() {
   const capabilities = [
     {
       title: "SAW Site",
       subtitle: "场景模型",
       icon: "🔍",
-      maturity: "Pilot",
+      maturity: "Prototype",
       maturityLabel: "真实项目验证中",
       desc: "场景建模、可施工性与环境约束分析",
       details: [
@@ -49,7 +55,7 @@ export default function CapabilitiesPage() {
       title: "SAW Field",
       subtitle: "现场验证",
       icon: "🔧",
-      maturity: "Pilot",
+      maturity: "Prototype",
       maturityLabel: "真实项目验证中",
       desc: "现场工作包、MVP验证和质量证据",
       details: [

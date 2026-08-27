@@ -1,6 +1,15 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 export default function HeroBackground() {
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
+  }, []);
+
   return (
     <div className="absolute inset-0 overflow-hidden">
       {/* 深色渐变背景 */}
@@ -10,21 +19,28 @@ export default function HeroBackground() {
       <div className="absolute inset-0 grid-bg opacity-20" />
       
       {/* 光晕效果 - 模拟工业科技感 */}
-      <div className="absolute left-1/4 top-1/4 h-96 w-96 animate-pulse rounded-full bg-accent-blue/10 blur-3xl" />
-      <div className="absolute right-1/4 bottom-1/4 h-96 w-96 animate-pulse rounded-full bg-accent-orange/10 blur-3xl delay-1000" />
+      {!reducedMotion && (
+        <>
+          <div className="absolute left-1/4 top-1/4 h-96 w-96 animate-pulse rounded-full bg-accent-blue/10 blur-3xl" />
+          <div className="absolute right-1/4 bottom-1/4 h-96 w-96 animate-pulse rounded-full bg-accent-orange/10 blur-3xl delay-1000" />
+        </>
+      )}
       
       {/* 扫描线效果 */}
-      <div className="absolute inset-0 opacity-10" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(59,130,246,0.1) 2px, rgba(59,130,246,0.1) 4px)",
-        animation: "scan 8s linear infinite"
-      }} />
+      {!reducedMotion && (
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(59,130,246,0.1) 2px, rgba(59,130,246,0.1) 4px)",
+          animation: "scan 8s linear infinite"
+        }} />
+      )}
       
       {/* AI 概念视频 */}
       <video
-        autoPlay
         muted
         loop
         playsInline
+        preload="metadata"
+        autoPlay={!reducedMotion}
         poster="/hero-poster.jpg"
         className="absolute inset-0 h-full w-full object-cover opacity-40"
       >

@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/privacy" },
+};
+
 export default function PrivacyPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-20">
@@ -42,7 +48,7 @@ export default function PrivacyPage() {
             <li>要求更正或删除您的信息</li>
             <li>撤回授权，停止我们处理您的信息</li>
           </ul>
-          <p className="mt-2">如需行使上述权利，请联系：privacy@saw-arraywright.com</p>
+          <p className="mt-2">如需行使上述权利，请联系：1952902717@qq.com</p>
         </section>
 
         <section>
@@ -53,7 +59,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="mb-3 text-xl font-semibold text-foreground">6. 联系我们</h2>
           <p>如有隐私相关问题，请联系：</p>
-          <p className="mt-2">SAW ArrayWright 团队<br />邮箱：privacy@saw-arraywright.com</p>
+          <p className="mt-2">SAW ArrayWright 团队<br />邮箱：1952902717@qq.com</p>
         </section>
       </div>
     </div>

@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/lab" },
+};
+
 import Link from "next/link";
 
 // 示例文章数据（后续可从 Markdown 文件读取）

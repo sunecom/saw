@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
-import { writeFileSync, mkdirSync, existsSync, readdirSync } from "fs";
-import { join } from "path";
+import * as lark from "@larksuiteoapi/node-sdk";
+import { z } from "zod";
+import "dotenv/config";
 
 const MAX_REQUESTS_PER_HOUR = 10;
 const requestCounts = new Map<string, { count: number; resetAt: number }>();
@@ -8,30 +9,45 @@ const requestCounts = new Map<string, { count: number; resetAt: number }>();
 function rateLimit(ip: string): boolean {
   const now = Date.now();
   const record = requestCounts.get(ip);
-  
   if (!record || now > record.resetAt) {
     requestCounts.set(ip, { count: 1, resetAt: now + 3600000 });
     return true;
   }
-  
-  if (record.count >= MAX_REQUESTS_PER_HOUR) {
-    return false;
-  }
-  
+  if (record.count >= MAX_REQUESTS_PER_HOUR) return false;
   record.count++;
   return true;
 }
 
-function validateEmail(email: string): boolean {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+function getClientIp(request: Request): string {
+  return (
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    request.headers.get("x-real-ip") ||
+    "unknown"
+  );
 }
 
-function validatePhone(phone: string): boolean {
-  return /^1[3-9]\d{9}$/.test(phone);
-}
+// Zod Schema 验证
+const leadSchema = z.object({
+  name: z.string().min(1, "姓名不能为空").max(50, "姓名不能超过 50 字"),
+  company: z.string().max(100, "公司名称不能超过 100 字").optional().default(""),
+  email: z.string().email("邮箱格式不正确").max(100),
+  phone: z.string().regex(/^$|^1[3-9]\d{9}$/, "手机号格式不正确").optional().default(""),
+  projectType: z.array(z.string()).optional(),
+  location: z.string().max(100, "地点不能超过 100 字").optional().default(""),
+  scale: z.string().max(50, "规模不能超过 50 字").optional().default(""),
+  stage: z.string().max(50).optional().default(""),
+  materials: z.array(z.string()).optional(),
+  description: z.string().max(2000, "描述不能超过 2000 字").optional().default(""),
+});
+
+// 飞书客户端
+const client = new lark.Client({
+  appId: process.env.FEISHU_APP_ID || "",
+  appSecret: process.env.FEISHU_APP_SECRET || "",
+});
 
 export async function POST(request: Request) {
-  const ip = request.headers.get("x-forwarded-for") || "unknown";
+  const ip = getClientIp(request);
   
   if (!rateLimit(ip)) {
     return NextResponse.json(
@@ -39,77 +55,64 @@ export async function POST(request: Request) {
       { status: 429 }
     );
   }
-  
+
   try {
-    const data = await request.json();
+    const raw = await request.json();
     
-    const required = ["name", "company", "phone", "email", "role", "type", "stage"];
-    for (const field of required) {
-      if (!data[field]) {
-        return NextResponse.json(
-          { success: false, message: `缺少必填字段: ${field}` },
-          { status: 400 }
-        );
-      }
-    }
-    
-    if (!validateEmail(data.email)) {
+    // Zod 验证
+    const parsed = leadSchema.safeParse(raw);
+    if (!parsed.success) {
+      const firstError = parsed.error.issues[0];
       return NextResponse.json(
-        { success: false, message: "邮箱格式不正确" },
+        { success: false, message: firstError.message || "输入数据格式错误" },
         { status: 400 }
       );
     }
+    const data = parsed.data;
     
-    if (!validatePhone(data.phone)) {
-      return NextResponse.json(
-        { success: false, message: "手机号格式不正确" },
-        { status: 400 }
-      );
-    }
-    
-    const jsonStr = JSON.stringify(data);
-    if (jsonStr.length > 10000) {
-      return NextResponse.json(
-        { success: false, message: "提交数据过大" },
-        { status: 413 }
-      );
-    }
-    
-    const dataDir = join(process.cwd(), "data", "projects");
-    if (!existsSync(dataDir)) {
-      mkdirSync(dataDir, { recursive: true });
-    }
-    
-    const existingFiles = readdirSync(dataDir);
-    if (existingFiles.length >= 1000) {
-      return NextResponse.json(
-        { success: false, message: "线索库已满，请联系管理员" },
-        { status: 503 }
-      );
-    }
-    
-    const enrichedData = {
-      ...data,
-      submitted_at: new Date().toISOString(),
-      ip_address: ip,
-      user_agent: request.headers.get("user-agent"),
-      lead_status: "新线索",
-      website_version: "V2.1"
+    // 写入飞书多维表格
+    const fields: Record<string, string | number | string[]> = {
+      "姓名": data.name,
+      "公司": data.company,
+      "邮箱": data.email,
+      "电话": data.phone,
+      "项目规模": data.scale,
+      "项目地点": data.location,
+      "补充说明": data.description,
+      "IP地址": ip,
+      "提交时间": Date.now(),
     };
-    
-    const timestamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
-    const filename = `${timestamp}-${Date.now()}.json`;
-    const filepath = join(dataDir, filename);
-    
-    writeFileSync(filepath, JSON.stringify(enrichedData, null, 2));
-    
-    return NextResponse.json({ 
-      success: true, 
-      message: "提交成功，我们将在3个工作日内与您联系",
-      lead_id: filename.replace(".json", "")
+
+    // 处理项目类型（多选）
+    if (data.projectType && data.projectType.length > 0) {
+      fields["项目类型"] = data.projectType;
+    }
+
+    // 处理已有资料（多选）
+    if (data.materials && data.materials.length > 0) {
+      fields["已有资料"] = data.materials;
+    }
+
+    const res = await client.bitable.appTableRecord.create({
+      path: {
+        app_token: process.env.FEISHU_BITABLE_APP || "",
+        table_id: process.env.FEISHU_BITABLE_TABLE || "",
+      },
+      data: { fields },
     });
-  } catch (error) {
-    console.error("Submit error:", error);
+
+    if (res.code !== 0) {
+      console.error("Lead submitted to bitable:", res);
+      return NextResponse.json(
+        { success: false, message: "提交失败，请稍后重试" },
+        { status: 500 }
+      );
+    }
+
+    console.log("Lead saved to bitable:", res.data?.record?.record_id);
+    return NextResponse.json({ success: true, message: "提交成功，我们将在3个工作日内与您联系" });
+  } catch (err) {
+    console.error("Submit error:", err);
     return NextResponse.json(
       { success: false, message: "提交失败，请稍后重试" },
       { status: 500 }

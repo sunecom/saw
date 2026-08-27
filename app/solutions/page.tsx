@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/solutions" },
+};
+
 import Image from "next/image";
 
 export default function SolutionsPage() {
@@ -15,7 +21,7 @@ export default function SolutionsPage() {
               <svg className="h-5 w-5 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
             </div>
             <h2 className="text-2xl font-bold text-foreground">大型光伏电站</h2>
-            <span className="rounded-full bg-blue-500/10 px-3 py-1 text-xs text-blue-400">Pilot · 真实项目试点</span>
+            <span className="rounded-full bg-blue-500/10 px-3 py-1 text-xs text-blue-400">Prototype · 原型验证中</span>
           </div>
           <div className="grid gap-8 md:grid-cols-2">
             <div className="space-y-6">
