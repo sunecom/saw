@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-4">
           <div>
             <div className="mb-4">
-              <img src="/logo.png" alt="SAW ArrayWright" className="h-8 w-auto" />
+              <img src="/logo.webp" alt="SAW ArrayWright" className="h-8 w-auto" />
             </div>
             <p className="text-sm text-muted">
               光伏阵列智造计划<br />

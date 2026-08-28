@@ -41,7 +41,7 @@ export default function HeroBackground() {
         playsInline
         preload="metadata"
         autoPlay={!reducedMotion}
-        poster="/hero-poster.jpg"
+        poster="/hero-poster-mini.jpg"
         className="absolute inset-0 h-full w-full object-cover opacity-40"
       >
         <source src="/hero-video.webm" type="video/webm" />

@@ -40,3 +40,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 app/layout.tsx.bak.*
+compress.js\npublic/hero-poster-mini.jpg\npublic/logo.webp

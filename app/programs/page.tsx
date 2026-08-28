@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  title: "联合开发与项目提交｜SAW ArrayWright",
+  description: "提交光伏项目资料，与 SAW 团队联合开发机器人友好阵列方案。适用于业主、EPC、设计院、设备与支架厂商。",
   alternates: { canonical: "/programs" },
+  openGraph: {
+    title: "联合开发与项目提交｜SAW ArrayWright",
+    description: "提交光伏项目资料，与 SAW 团队联合开发机器人友好阵列方案。适用于业主、EPC、设计院、设备与支架厂商。",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "联合开发与项目提交｜SAW ArrayWright",
+    description: "提交光伏项目资料，与 SAW 团队联合开发机器人友好阵列方案。适用于业主、EPC、设计院、设备与支架厂商。",
+  },
 };
 
 import ProjectForm from "./project-form";

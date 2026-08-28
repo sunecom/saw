@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://saw.aitomoney.online"),
-  title: "SAW ArrayWright | 光伏阵列智造计划",
+  title: "SAW ArrayWright｜光伏阵列智造计划",
   description: "为机器人重新设计光伏建造。SAW光伏阵列智造计划 — 项目评估、场景建模、施工仿真、数据闭环。",
   keywords: ["光伏", "太阳能", "机器人", "智能制造", "EPC", "光伏电站", "SAW", "ArrayWright", "光伏车棚", "智能建造"],
   authors: [{ name: "SAW ArrayWright Team" }],
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "SAW ArrayWright | 光伏阵列智造计划",
+    title: "SAW ArrayWright｜光伏阵列智造计划",
     description: "为机器人重新设计光伏建造",
     type: "website",
     locale: "zh_CN",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SAW ArrayWright | 光伏阵列智造计划",
+    title: "SAW ArrayWright｜光伏阵列智造计划",
     description: "为机器人重新设计光伏建造",
     images: ["https://saw.aitomoney.online/og-image.png"],
   },
@@ -50,7 +50,7 @@ export default function RootLayout({
     "name": "SAW ArrayWright",
     "alternateName": "光伏阵列智造计划",
     "url": "https://saw.aitomoney.online",
-    "logo": "https://saw.aitomoney.online/logo.png",
+    "logo": "https://saw.aitomoney.online/logo.webp",
     "description": "为机器人重新设计光伏建造。项目评估、场景建模、施工仿真、数据闭环。",
     "founder": [
       {

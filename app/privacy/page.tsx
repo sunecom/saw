@@ -52,12 +52,46 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="mb-3 text-xl font-semibold text-foreground">5. 政策更新</h2>
-          <p>本隐私政策可能会不定期更新。当前版本：v1.0（2026年8月27日）</p>
+          <h2 className="mb-3 text-xl font-semibold text-foreground">5. 数据处理责任主体与保存规则</h2>
+          <p><strong>数据处理责任主体</strong>：SAW Arraywright 项目由天伏能科（江苏天伏能科新能源有限公司）与 AiToMoney 联合发起，两方为<strong>共同数据处理者</strong>。其中：</p>
+          <ul className="mt-2 list-inside list-disc space-y-1">
+            <li>天伏能科负责光伏工程与现场数据处理</li>
+            <li>AiToMoney 负责网站运营与项目线索接收</li>
+            <li>SAW 项目团队（两方共同组成）负责具体跟进与产品开发</li>
+          </ul>
+          <p className="mt-3"><strong>保存期限</strong>：</p>
+          <ul className="mt-2 list-inside list-disc space-y-1">
+            <li>项目线索默认保存 <strong>24 个月</strong>，自您最后一次主动跟进之日起计算</li>
+            <li>已签约合作项目的数据，按合同约定与法律要求延长保存</li>
+            <li>未跟进 / 关闭的线索，到期后 30 天内安全删除</li>
+            <li>如法律诉讼、监管要求或合规审计需要，可依法延长保存</li>
+          </ul>
+          <p className="mt-3"><strong>处理时限</strong>：</p>
+          <ul className="mt-2 list-inside list-disc space-y-1">
+            <li>查看请求：收到后 7 个工作日内回复</li>
+            <li>更正请求：收到后 7 个工作日内完成</li>
+            <li>删除请求：收到后 15 个工作日内完成</li>
+            <li>撤回授权：自撤回之日起 7 个工作日内停止处理</li>
+          </ul>
         </section>
 
         <section>
-          <h2 className="mb-3 text-xl font-semibold text-foreground">6. 联系我们</h2>
+          <h2 className="mb-3 text-xl font-semibold text-foreground">6. 第三方处理与数据共享</h2>
+          <p>当前阶段，SAW 项目数据<strong>不向任何第三方共享或出售</strong>。我们使用的服务提供商：</p>
+          <ul className="mt-2 list-inside list-disc space-y-1">
+            <li>飞书（多维表格与消息通知）：项目线索存储与群通知发送</li>
+            <li>阿里云 / 腾讯云服务器：网站部署与运行</li>
+          </ul>
+          <p className="mt-2">上述服务提供商仅在提供服务所必需的范围内接触数据，并承担同等的保密与安全义务。如未来接入邮件营销、CRM、统计分析或第三方云服务，本隐私政策将同步更新，并提前通知已提交线索的用户。</p>
+        </section>
+
+        <section>
+          <h2 className="mb-3 text-xl font-semibold text-foreground">7. 政策更新</h2>
+          <p>本隐私政策可能会不定期更新。当前版本：v1.1（2026年8月28日）</p>
+        </section>
+
+        <section>
+          <h2 className="mb-3 text-xl font-semibold text-foreground">8. 联系我们</h2>
           <p>如有隐私相关问题，请联系：</p>
           <p className="mt-2">SAW ArrayWright 团队<br />邮箱：1952902717@qq.com</p>
         </section>

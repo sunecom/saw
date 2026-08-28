@@ -17,7 +17,7 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <img src="/logo.png" alt="SAW ArrayWright" className="h-14 w-auto" />
+            <img src="/logo.webp" alt="SAW ArrayWright" className="h-14 w-auto" />
               <span className="text-sm font-medium text-muted transition hover:text-foreground">SAW ARRAYWRIGHT</span>
           </Link>
 
@@ -38,7 +38,7 @@ export default function Header() {
             {/* 移动端汉堡菜单 */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="flex h-10 w-10 items-center justify-center rounded-lg border border-border md:hidden"
+              className="flex h-12 w-12 items-center justify-center rounded-lg border border-border md:hidden"
               aria-label="菜单" aria-expanded={mobileOpen} aria-controls="mobile-menu"
             >
               {mobileOpen ? (
@@ -63,7 +63,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-lg px-4 py-2 text-sm font-medium text-muted transition hover:bg-card-bg hover:text-foreground"
+                  className="rounded-lg px-4 py-3 text-base font-medium text-muted transition hover:bg-card-bg hover:text-foreground"
                 >
                   {item.label}
                 </Link>

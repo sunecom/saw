@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  title: "解决方案｜SAW ArrayWright 光伏阵列智造计划",
+  description: "SAW 面向大型地面电站与车棚场景，提供基于机器人友好阵列设计、施工仿真与现场验证的完整光伏智造解决方案。",
   alternates: { canonical: "/solutions" },
+  openGraph: {
+    title: "解决方案｜SAW ArrayWright 光伏阵列智造计划",
+    description: "SAW 面向大型地面电站与车棚场景，提供基于机器人友好阵列设计、施工仿真与现场验证的完整光伏智造解决方案。",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "解决方案｜SAW ArrayWright 光伏阵列智造计划",
+    description: "SAW 面向大型地面电站与车棚场景，提供基于机器人友好阵列设计、施工仿真与现场验证的完整光伏智造解决方案。",
+  },
 };
 
 import Image from "next/image";
@@ -21,7 +33,7 @@ export default function SolutionsPage() {
               <svg className="h-5 w-5 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
             </div>
             <h2 className="text-2xl font-bold text-foreground">大型光伏电站</h2>
-            <span className="rounded-full bg-blue-500/10 px-3 py-1 text-xs text-blue-400">Prototype · 原型验证中</span>
+            <span className="rounded-full bg-blue-500/10 px-3 py-1 text-xs text-blue-400">Research · 研究与场景定义</span>
           </div>
           <div className="grid gap-8 md:grid-cols-2">
             <div className="space-y-6">
@@ -40,7 +52,7 @@ export default function SolutionsPage() {
               <span className="text-sm text-muted">当前进展</span>
               <div className="flex items-center gap-4">
                 <div className="h-2 w-48 rounded bg-border"><div className="h-full w-1/5 rounded bg-accent-blue" /></div>
-                <span className="text-sm text-accent-blue">规划阶段</span>
+                <span className="text-sm text-accent-blue">规划中</span>
               </div>
             </div>
           </div>

@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  title: "技术能力｜SAW Site、Frame、Sim、Field、Core",
+  description: "SAW 五大技术能力：Site 场景建模、Frame 机器人友好支架、Sim 施工仿真、Field 现场验证、Core 核心平台。",
   alternates: { canonical: "/capabilities" },
+  openGraph: {
+    title: "技术能力｜SAW Site、Frame、Sim、Field、Core",
+    description: "SAW 五大技术能力：Site 场景建模、Frame 机器人友好支架、Sim 施工仿真、Field 现场验证、Core 核心平台。",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "技术能力｜SAW Site、Frame、Sim、Field、Core",
+    description: "SAW 五大技术能力：Site 场景建模、Frame 机器人友好支架、Sim 施工仿真、Field 现场验证、Core 核心平台。",
+  },
 };
 
 export default function CapabilitiesPage() {
@@ -10,8 +22,8 @@ export default function CapabilitiesPage() {
       title: "SAW Site",
       subtitle: "场景模型",
       icon: "🔍",
-      maturity: "Prototype",
-      maturityLabel: "真实项目验证中",
+      maturity: "Research",
+      maturityLabel: "研究与场景定义中",
       desc: "场景建模、可施工性与环境约束分析",
       details: [
         "项目数据整理与初步场景模型",
@@ -40,8 +52,8 @@ export default function CapabilitiesPage() {
       title: "SAW Sim",
       subtitle: "施工仿真",
       icon: "📐",
-      maturity: "Prototype",
-      maturityLabel: "原型验证中",
+      maturity: "Research",
+      maturityLabel: "研究中",
       desc: "施工仿真、动作路径、节拍和工序设计",
       details: [
         "机器人动作路径规划",
@@ -55,8 +67,8 @@ export default function CapabilitiesPage() {
       title: "SAW Field",
       subtitle: "现场验证",
       icon: "🔧",
-      maturity: "Prototype",
-      maturityLabel: "真实项目验证中",
+      maturity: "Research",
+      maturityLabel: "等待首个真实项目",
       desc: "现场工作包、MVP验证和质量证据",
       details: [
         "现场施工方案制定",
@@ -71,7 +83,7 @@ export default function CapabilitiesPage() {
       subtitle: "核心平台",
       icon: "⚙️",
       maturity: "Prototype",
-      maturityLabel: "原型验证中",
+      maturityLabel: "在 SAW Carport MVP 中验证",
       desc: "跨项目数据、技能、事件和设备适配器",
       details: [
         "统一数据模型与存储",

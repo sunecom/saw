@@ -66,28 +66,30 @@ export default function ProjectForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mx-auto max-w-2xl space-y-6" aria-label="项目资料提交表单">
+    <>
+    <noscript><p className="mb-4 rounded-lg border border-yellow-500/50 bg-yellow-500/10 p-4 text-sm text-yellow-400">提示：当前禁用了 JavaScript，表单将以普通方式提交，请确保信息填写完整。</p></noscript>
+      <form method="post" action="/api/submit-project" onSubmit={handleSubmit} className="mx-auto max-w-2xl space-y-6" aria-label="项目资料提交表单">
       {error && <div role="alert" aria-live="assertive" className="rounded-lg border border-red-500/50 bg-red-500/10 p-4 text-sm text-red-400">{error}</div>}
 
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label htmlFor="name" className={labelClass}>姓名 *</label>
-          <input id="name" type="text" name="name" required className={inputClass} placeholder="您的姓名" />
+          <input id="name" type="text" name="name" required maxLength={50} autoComplete="name" className={inputClass} placeholder="您的姓名" />
         </div>
         <div>
           <label htmlFor="company" className={labelClass}>公司</label>
-          <input id="company" type="text" name="company" className={inputClass} placeholder="公司名称" />
+          <input id="company" type="text" name="company" maxLength={100} autoComplete="organization" className={inputClass} placeholder="公司名称" />
         </div>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label htmlFor="email" className={labelClass}>邮箱 *</label>
-          <input id="email" type="email" name="email" required className={inputClass} placeholder="your@email.com" />
+          <input id="email" type="email" name="email" required maxLength={100} autoComplete="email" className={inputClass} placeholder="your@email.com" />
         </div>
         <div>
           <label htmlFor="phone" className={labelClass}>电话</label>
-          <input id="phone" type="tel" name="phone" className={inputClass} placeholder="13800138000" />
+          <input id="phone" type="tel" name="phone" maxLength={20} autoComplete="tel" className={inputClass} placeholder="13800138000" />
         </div>
       </div>
 
@@ -105,11 +107,11 @@ export default function ProjectForm() {
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label htmlFor="location" className={labelClass}>项目所在地</label>
-          <input id="location" type="text" name="location" className={inputClass} placeholder="如：江苏省南京市" />
+          <input id="location" type="text" name="location" maxLength={100} autoComplete="address-level2" className={inputClass} placeholder="如：江苏省南京市" />
         </div>
         <div>
           <label htmlFor="scale" className={labelClass}>预计规模</label>
-          <input id="scale" type="text" name="scale" className={inputClass} placeholder="如：100MW" />
+          <input id="scale" type="text" name="scale" maxLength={50} className={inputClass} placeholder="如：100MW" />
         </div>
       </div>
 
@@ -169,5 +171,6 @@ export default function ProjectForm() {
         {loading ? "提交中..." : "提交项目资料"}
       </button>
     </form>
+    </>
   );
 }

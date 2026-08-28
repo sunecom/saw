@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  title: "SAW 实验室｜光伏阵列自动建造研究与工程日志",
+  description: "SAW 实验室发布光伏阵列自动建造、机器人友好支架、施工仿真与核心平台相关的技术研究、工程日志与公开记录。",
   alternates: { canonical: "/lab" },
+  openGraph: {
+    title: "SAW 实验室｜光伏阵列自动建造研究与工程日志",
+    description: "SAW 实验室发布光伏阵列自动建造、机器人友好支架、施工仿真与核心平台相关的技术研究、工程日志与公开记录。",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SAW 实验室｜光伏阵列自动建造研究与工程日志",
+    description: "SAW 实验室发布光伏阵列自动建造、机器人友好支架、施工仿真与核心平台相关的技术研究、工程日志与公开记录。",
+  },
 };
 
 import Link from "next/link";
