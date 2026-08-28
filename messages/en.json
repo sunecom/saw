@@ -349,5 +349,19 @@
   "404": {
     "title": "404",
     "code": "404"
+  },
+  "labArticles": {
+    "sawCore": {
+      "title": "SAW Core Architecture Design",
+      "body": "SAW Core is the technical foundation of the entire solar array manufacturing program, connecting four key phases: project evaluation, scene modeling, construction simulation, and on-site validation.\n\n## Design Principles\n\nSAW Core adopts an adapter pattern to unify data, skills, events, and devices across different projects:\n\n- **Data Standardization**: A unified solar array data model\n- **Reusable Skills**: Construction workflows modularized as callable skills\n- **Event-Driven**: Real-time sync of on-site state changes\n- **Device-Agnostic**: Adapter-based support for multiple robot types\n\n## Technical Architecture\n\nSAW Core is structured in four layers:\n\n1. **Data Layer**: Standardized storage for projects, arrays, and workflows\n2. **Skill Layer**: Reusable construction workflow modules\n3. **Event Layer**: State-change notifications and subscriptions\n4. **Adapter Layer**: Interfaces for devices and external systems\n\n## Next Steps\n\nSAW Core is currently at the prototype stage, with core concepts being validated in the SAW Carport project. It will later be extended to large-scale ground-mounted power station scenarios."
+    },
+    "carport": {
+      "title": "SAW Carport MVP Plan",
+      "body": "SAW Carport is the first public engineering demonstration scenario for the SAW technology, aiming to validate the feasibility of robotically constructing solar carports.\n\n## Scenario Selection\n\nCommercial and industrial park parking lots have been chosen as the demonstration scenario:\n\n- Moderate scale, suitable for rapid validation\n- High visibility, ideal for showcase\n- Relatively standardized structure, conducive to robot adaptation\n\n## Validation Goals\n\nThe MVP phase focuses on validating:\n\n1. Installability of robot-friendly mounts\n2. Efficiency gains from simplified construction workflows\n3. How data-loop closure helps quality control\n\n## Timeline\n\n- **Q3 2026**: Complete scene modeling and simulation\n- **Q4 2026**: On-site construction validation\n- **Q1 2027**: Data review and optimization"
+    },
+    "mount": {
+      "title": "Exploring Robot-Friendly Mount Design",
+      "body": "Traditional solar mount design assumes manual installation and does not consider robotic operation. The SAW Frame project aims to define interface standards for robot-friendly mounts.\n\n## Design Challenges\n\nRobotic mount installation requires consideration of:\n\n- **Positioning Precision**: Tolerance ranges of robotic vision and arms\n- **Gripping Points**: Mount structures must provide clear grip locations\n- **Connection Methods**: Bolts, clips, and fasteners must be operable by robots\n\n## Initial Proposal\n\nSAW Frame's preliminary design includes:\n\n1. Standardized interface definitions\n2. Modular mount units\n3. Optimized robotic construction workflows\n\n## Open Discussion\n\nMount design requires collaboration with mount manufacturers and robotics companies. Partners from related fields are welcome to join the discussion."
+    }
   }
 }
