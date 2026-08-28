@@ -177,7 +177,9 @@
       "Prototype": "Prototype",
       "Pilot": "Pilot",
       "Deliverable": "Deliverable"
-    }
+    },
+    "metaTitle": "Capabilities — Site / Frame / Sim / Field / Core",
+    "metaDescription": "SAW five technical capabilities: scene modeling and robot constructability (SAW Site), robot-friendly mounting (SAW Frame), construction simulation and cycle-time optimization (SAW Sim), on-site quality evidence and MVP validation (SAW Field), and shared technical foundation (SAW Core)."
   },
   "programs": {
     "title": "Programs",
@@ -202,11 +204,11 @@
       }
     },
     "form": {
-      "name": "Name *",
+      "name": "Name",
       "namePlaceholder": "Your name",
       "company": "Company",
       "companyPlaceholder": "Company name",
-      "email": "Email *",
+      "email": "Email",
       "emailPlaceholder": "your@email.com",
       "phone": "Phone",
       "phonePlaceholder": "13800138000",
@@ -250,7 +252,8 @@
       "required": "Required",
       "consentPrefix": "I have read and agree to the",
       "consentSuffix": ", authorizing the SAW team to process my submitted project information for joint development evaluation.",
-      "consentLinkText": "Privacy Policy"
+      "consentLinkText": "Privacy Policy",
+      "pleaseSelect": "Please select"
     }
   },
   "lab": {

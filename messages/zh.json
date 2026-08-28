@@ -177,7 +177,9 @@
       "Prototype": "原型",
       "Pilot": "试点",
       "Deliverable": "可交付"
-    }
+    },
+    "metaTitle": "技术能力 — Site / Frame / Sim / Field / Core",
+    "metaDescription": "SAW 五大技术能力：场景建模与机器人可施工性（SAW Site）、机器人友好型支架（SAW Frame）、施工仿真与节拍优化（SAW Sim）、现场质量证据与 MVP 验证（SAW Field）、跨主线共享技术底座（SAW Core）。"
   },
   "programs": {
     "title": "项目计划",
@@ -202,11 +204,11 @@
       }
     },
     "form": {
-      "name": "姓名 *",
+      "name": "姓名",
       "namePlaceholder": "您的姓名",
       "company": "公司",
       "companyPlaceholder": "公司名称",
-      "email": "邮箱 *",
+      "email": "邮箱",
       "emailPlaceholder": "your@email.com",
       "phone": "电话",
       "phonePlaceholder": "13800138000",
@@ -250,7 +252,8 @@
       "required": "必填",
       "consentPrefix": "我已阅读并同意",
       "consentSuffix": "，授权 SAW 团队处理我提交的项目信息用于联合开发评估。",
-      "consentLinkText": "隐私政策"
+      "consentLinkText": "隐私政策",
+      "pleaseSelect": "请选择"
     }
   },
   "lab": {

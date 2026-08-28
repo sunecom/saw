@@ -36,17 +36,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug, locale } = await params;
   setRequestLocale(locale);
   const article = articles[slug];
-  if (!article) return { title: "文章未找到" };
+  if (!article) return { title: "Article Not Found" };
   const t = await getTranslations("labArticles");
   const title = t(`${article.slug}.title`);
   const body = t(`${article.slug}.body`);
-  const description = body.split("\n\n")[0].slice(0, 160);
+  const firstPara = body.split("\n\n")[0];
+  const words = firstPara.split(/\s+/);
+  let desc = "";
+  for (const w of words) { if ((desc + " " + w).length > 160) break; desc = desc ? desc + " " + w : w; }
+  const description = desc + (desc.length < firstPara.length ? "..." : "");
   return {
-    title: `${title}｜SAW ArrayWright`,
+    title,
     description,
-    alternates: { canonical: `/${locale}/lab/${slug}` },
+    alternates: { canonical: `/${locale}/lab/${slug}`, languages: { "zh-CN": `/zh/lab/${slug}`, "en-US": `/en/lab/${slug}` } },
     openGraph: {
-      title: `${title}｜SAW ArrayWright`,
+      title,
       description,
       type: "article",
       publishedTime: article.date,
@@ -54,7 +58,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title}｜SAW ArrayWright`,
+      title,
       description,
     },
   };
@@ -141,7 +145,11 @@ export default async function LabPostPage({ params }: { params: Promise<{ slug: 
   const t = await getTranslations("labArticles");
   const title = t(`${article.slug}.title`);
   const body = t(`${article.slug}.body`);
-  const description = body.split("\n\n")[0].slice(0, 160);
+  const firstPara = body.split("\n\n")[0];
+  const words = firstPara.split(/\s+/);
+  let desc = "";
+  for (const w of words) { if ((desc + " " + w).length > 160) break; desc = desc ? desc + " " + w : w; }
+  const description = desc + (desc.length < firstPara.length ? "..." : "");
 
   const articleUrl = `https://saw.aitomoney.online/${locale}/lab/${slug}`;
   const jsonLd = {
