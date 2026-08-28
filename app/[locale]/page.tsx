@@ -21,33 +21,37 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden">
         <HeroBackground />
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
-          <h1 className="mb-6 text-5xl font-bold leading-tight text-foreground md:text-7xl">
+          <h1 className="mb-8 text-4xl font-bold leading-[1.15] text-foreground md:text-6xl">
+            {/* 改断行：让"为机器人"成对，避免单字成行 */}
             {t("hero.title").split("机器人").map((part: string, i: number, arr: string[]) =>
               i < arr.length - 1 ? (
-                <span key={i}>
+                <span key={i} className="block">
                   {part}
-                  <br />
-                  <span className="bg-gradient-to-r from-accent-blue to-accent-orange bg-clip-text text-transparent">
+                  <span className="relative inline-block whitespace-nowrap">
+                    <span className="absolute -inset-x-1 inset-y-0 -z-10 rounded bg-gradient-to-r from-accent-orange/30 to-accent-blue/30 blur-md" />
                     机器人
                   </span>
                 </span>
               ) : (
-                <span key={i}>{part}</span>
+                <span key={i} className="block">{part}</span>
               )
             )}
           </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted md:text-xl">
+          {/* 副标题对比度：muted → foreground/85 */}
+          <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-foreground/85 md:text-xl">
             {t("hero.subtitle")}
           </p>
+          {/* CTA 主次颠倒：橙色"查看方案"为主，蓝色"提交项目"为次 */}
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href={`/${locale}/programs`} className="rounded-lg bg-accent-blue px-8 py-3 font-semibold text-white glow-blue">
+            <Link href={`/${locale}/solutions`} className="rounded-lg bg-accent-orange px-8 py-3.5 font-semibold text-white shadow-lg shadow-accent-orange/30 transition hover:bg-accent-orange/90">
               {t("hero.cta")}
             </Link>
-            <Link href={`/${locale}/solutions`} className="rounded-lg border border-border bg-card-bg/50 px-8 py-3 font-semibold text-foreground">
+            <Link href={`/${locale}/programs`} className="rounded-lg border border-foreground/30 bg-black/30 px-8 py-3.5 font-semibold text-foreground backdrop-blur transition hover:border-foreground/60 hover:bg-black/40">
               {t("hero.secondary")}
             </Link>
           </div>
-          <p className="mt-8 inline-block rounded bg-black/30 px-3 py-1 text-sm text-muted/90 backdrop-blur-sm">
+          {/* 免责小字加深背景 + 提亮文字 */}
+          <p className="mt-10 inline-block rounded-md border border-foreground/10 bg-black/60 px-4 py-2 text-xs text-foreground/80 backdrop-blur-md md:text-sm">
             {t("concept.disclaimer")}
           </p>
         </div>

@@ -31,8 +31,8 @@
     "hero": {
       "title": "为机器人重新设计光伏建造",
       "subtitle": "SAW Arraywright 整合了场景建模、机器人友好阵列设计、施工仿真与现场质量证据，形成可验证的智能建造体系。",
-      "cta": "提交项目",
-      "secondary": "查看方案"
+      "cta": "查看方案",
+      "secondary": "提交项目"
     },
     "concept": {
       "label": "AI 概念可视化",
