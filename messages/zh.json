@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "siteName": "SAW Arraywright",
+    "siteName": "SAW ArrayWright",
     "siteTagline": "光伏阵列智造计划",
-    "defaultTitle": "SAW Arraywright｜光伏阵列智造计划",
+    "defaultTitle": "SAW ArrayWright｜光伏阵列智造计划",
     "defaultDescription": "为机器人重新设计光伏建造。SAW光伏阵列智造计划 — 项目评估、场景建模、施工仿真、数据闭环。"
   },
   "common": {
@@ -19,7 +19,7 @@
       "contact": "联系",
       "partners": "发起团队",
       "submit": "提交项目",
-      "copyright": "© 2026 SAW Arraywright. 光伏阵列智造计划. All rights reserved."
+      "copyright": "© 2026 SAW ArrayWright. 光伏阵列智造计划. All rights reserved."
     },
     "skipToContent": "跳到主要内容",
     "menu": "菜单",
@@ -30,7 +30,7 @@
   "home": {
     "hero": {
       "title": "为机器人重新设计光伏建造",
-      "subtitle": "SAW Arraywright 整合了场景建模、机器人友好阵列设计、施工仿真与现场质量证据，形成可验证的智能建造体系。",
+      "subtitle": "SAW ArrayWright 整合了场景建模、机器人友好阵列设计、施工仿真与现场质量证据，形成可验证的智能建造体系。",
       "cta": "查看方案",
       "secondary": "提交项目"
     },
@@ -43,14 +43,25 @@
       "status": "规划中"
     },
     "intro": {
-      "title": "什么是 SAW Arraywright？",
+      "title": "两条核心工程主线",
       "paragraph1": "传统光伏建造为人设计。我们从机器人出发，重新设计阵列、支架、施工流程和数据闭环。",
       "paragraph2": "目标是让大规模光伏安装更快、更精准、端到端可验证。",
       "core": "核心能力",
       "coreItems": [
         "SAW Site — 场景建模与机器人可施工性分析",
         "SAW Sim — 施工仿真与工序节拍优化",
-        "SAW Field — 现场质量证据与 MVP 验证"
+        "SAW Field — 现场质量证据与 MVP 验证",
+        "SAW Core — 跨主线共享的技术底座"
+      ],
+      "track1Title": "大型光伏电站",
+      "track1Desc": "面向大型地面电站的机器人友好型阵列重构：场景建模、施工仿真、核心平台到现场验证，端到端把机器人纳入设计与施工闭环。",
+      "track2Title": "SAW Carport",
+      "track2Desc": "首个公开工程示范场景。基于商业停车场结构标准化的特点，验证机器人友好型支架与简化施工工序的可行性。",
+      "coreDescs": [
+        "把项目现场转化为机器人可识别的结构化场景，识别施工瓶颈与可施工性约束。",
+        "在仿真环境里复现机器人施工工序，量化节拍、成本与质量，给现场施工提供决策依据。",
+        "现场采集真实施工证据，把仿真与实测数据闭环起来，让 MVP 验证可复盘。",
+        "数据、技能、事件、设备适配器统一管理，是 SAW 全部产品线的技术底座。"
       ]
     },
     "cta": {
@@ -203,7 +214,7 @@
       "projectTypeOptions": {
         "ground": "大型地面电站",
         "carport": "光伏车棚",
-        "rooftop": "屋顶/分布式",
+        "rooftop": "工商业分布式",
         "other": "其他"
       },
       "location": "项目地点",
@@ -212,17 +223,19 @@
       "scalePlaceholder": "如：100MW",
       "stage": "当前阶段",
       "stageOptions": {
-        "planning": "规划/前期",
-        "design": "设计阶段",
-        "construction": "施工进行中",
-        "operation": "运维"
+        "opportunity": "机会评估",
+        "feasibility": "可研设计",
+        "design": "方案设计",
+        "procurement": "采购招标",
+        "construction": "施工建设",
+        "completed": "运营复盘"
       },
       "materials": "已有资料（多选）",
       "materialsOptions": {
-        "drawings": "布局图/CAD",
+        "drawings": "总图 / CAD",
         "geotechnical": "地质勘察报告",
-        "satellite": "卫星图/DEM",
-        "bom": "BoM/设备清单",
+        "satellite": "卫星图",
+        "bom": "BoM 清单",
         "none": "暂无"
       },
       "description": "补充说明",
@@ -234,7 +247,10 @@
       "success": "✓ 提交成功",
       "successDesc": "我们已收到您的项目资料，将在 3 个工作日内与您联系。",
       "error": "✗ 提交失败",
-      "required": "必填"
+      "required": "必填",
+      "consentPrefix": "我已阅读并同意",
+      "consentSuffix": "，授权 SAW 团队处理我提交的项目信息用于联合开发评估。",
+      "consentLinkText": "隐私政策"
     }
   },
   "lab": {
@@ -337,7 +353,7 @@
     "section8": {
       "title": "8. 联系我们",
       "content": "如有隐私相关问题，请联系：",
-      "team": "SAW Arraywright 团队",
+      "team": "SAW ArrayWright 团队",
       "email": "邮箱：1952902717@qq.com"
     }
   },

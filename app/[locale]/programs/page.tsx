@@ -1,6 +1,27 @@
 import ProjectForm from "./project-form";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const isEn = locale === "en";
+  const title = isEn ? "Joint Development & Project Submission" : "联合开发与项目提交";
+  const description = isEn
+    ? "Submit your solar project information to co-develop robot-friendly array solutions with the SAW team. For project owners, EPCs, design institutes, equipment and mount manufacturers."
+    : "提交光伏项目资料，与 SAW 团队联合开发机器人友好阵列方案。适用于业主、EPC、设计院、设备与支架厂商。";
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/${locale}/programs`,
+      languages: { "zh-CN": `/zh/programs`, "en-US": `/en/programs` },
+    },
+    openGraph: { title, description, type: "website" },
+    twitter: { card: "summary_large_image", title, description },
+  };
+}
+
 export default async function ProgramsPage({
   searchParams,
   params,

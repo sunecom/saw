@@ -4,23 +4,26 @@ import type { ReactNode } from "react";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 
 // 文章元信息（slug, date, tags）— 正文用 t() 拿双语
-const articles: Record<string, { slug: string; date: string; tags: string[]; author?: string }> = {
+const articles: Record<string, { slug: string; date: string; tagsZh: string[]; tagsEn: string[]; author?: string }> = {
   "saw-core-architecture": {
     slug: "sawCore",
     date: "2026-08-27",
-    tags: ["架构", "SAW Core"],
+    tagsZh: ["架构", "SAW Core"],
+    tagsEn: ["Architecture", "SAW Core"],
     author: "SAW Team",
   },
   "carport-mvp-plan": {
     slug: "carport",
     date: "2026-08-26",
-    tags: ["Carport", "MVP"],
+    tagsZh: ["车棚", "MVP"],
+    tagsEn: ["Carport", "MVP"],
     author: "SAW Team",
   },
   "robot-friendly-mount-design": {
     slug: "mount",
     date: "2026-08-25",
-    tags: ["支架", "机器人"],
+    tagsZh: ["支架", "机器人"],
+    tagsEn: ["Mount", "Robotics"],
     author: "SAW Team",
   },
 };
@@ -47,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description,
       type: "article",
       publishedTime: article.date,
-      authors: [article.author || "SAW Arraywright"],
+      authors: [article.author || "SAW ArrayWright"],
     },
     twitter: {
       card: "summary_large_image",
@@ -172,7 +175,7 @@ export default async function LabPostPage({ params }: { params: Promise<{ slug: 
         <div className="mb-4 flex items-center gap-3">
           <time className="text-sm text-muted" dateTime={article.date}>{article.date}</time>
           <div className="flex gap-2">
-            {article.tags.map((tag) => (
+            {(locale === "zh" ? article.tagsZh : article.tagsEn).map((tag) => (
               <span key={tag} className="rounded-full bg-accent-blue/10 px-2 py-0.5 text-xs text-accent-blue">{tag}</span>
             ))}
           </div>

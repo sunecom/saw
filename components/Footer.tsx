@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-4">
           <div>
             <div className="mb-4">
-              <img src="/logo.webp" alt="SAW Arraywright" className="h-8 w-auto" />
+              <img src="/logo.webp" alt="SAW ArrayWright" className="h-8 w-auto" />
             </div>
             <p className="whitespace-pre-line text-sm text-muted">{tFooter("tagline")}</p>
           </div>

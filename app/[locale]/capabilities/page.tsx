@@ -1,5 +1,26 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const isEn = locale === "en";
+  const title = isEn ? "Capabilities — Site / Sim / Field / Core" : "技术能力 — Site / Sim / Field / Core";
+  const description = isEn
+    ? "SAW four technical capabilities: scene modeling & robot constructability (SAW Site), construction simulation & cycle-time optimization (SAW Sim), on-site quality evidence & MVP validation (SAW Field), and shared technical foundation (SAW Core)."
+    : "SAW 四大技术能力：场景建模与机器人可施工性分析（SAW Site）、施工仿真与节拍优化（SAW Sim）、现场质量证据与 MVP 验证（SAW Field）、跨主线共享技术底座（SAW Core）。";
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/${locale}/capabilities`,
+      languages: { "zh-CN": `/zh/capabilities`, "en-US": `/en/capabilities` },
+    },
+    openGraph: { title, description, type: "website" },
+    twitter: { card: "summary_large_image", title, description },
+  };
+}
+
 export default async function CapabilitiesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);

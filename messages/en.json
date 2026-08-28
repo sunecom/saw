@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "siteName": "SAW Arraywright",
+    "siteName": "SAW ArrayWright",
     "siteTagline": "Solar Array Robotic Manufacturing Initiative",
-    "defaultTitle": "SAW Arraywright | Solar Array Robotic Manufacturing",
+    "defaultTitle": "SAW ArrayWright | Solar Array Robotic Manufacturing",
     "defaultDescription": "Re-engineering solar construction for robots. SAW — project assessment, scene modeling, construction simulation, and data-driven verification."
   },
   "common": {
@@ -19,7 +19,7 @@
       "contact": "Contact",
       "partners": "Initiated by",
       "submit": "Submit a Project",
-      "copyright": "© 2026 SAW Arraywright. Solar Array Robotic Manufacturing Initiative. All rights reserved."
+      "copyright": "© 2026 SAW ArrayWright. Solar Array Robotic Manufacturing Initiative. All rights reserved."
     },
     "skipToContent": "Skip to content",
     "menu": "Menu",
@@ -30,7 +30,7 @@
   "home": {
     "hero": {
       "title": "Re-engineering Solar Construction for Robots",
-      "subtitle": "SAW Arraywright is an integrated initiative that combines scene modeling, robot-friendly array design, construction simulation, and on-site quality evidence.",
+      "subtitle": "SAW ArrayWright is an integrated initiative that combines scene modeling, robot-friendly array design, construction simulation, and on-site quality evidence.",
       "cta": "Explore Solutions",
       "secondary": "Submit a Project"
     },
@@ -43,14 +43,25 @@
       "status": "Planning"
     },
     "intro": {
-      "title": "What is SAW Arraywright?",
+      "title": "Two Core Engineering Tracks",
       "paragraph1": "Traditional solar construction is designed for human crews. We start with robots — and rebuild the array, the mounting, the workflow, and the data loop.",
       "paragraph2": "Our goal is to make large-scale solar installation faster, more precise, and verifiable end-to-end.",
       "core": "Core Capabilities",
       "coreItems": [
         "SAW Site — Scene modeling and robot constructability analysis",
         "SAW Sim — Construction simulation and cycle-time optimization",
-        "SAW Field — On-site quality evidence and MVP verification"
+        "SAW Field — On-site quality evidence and MVP validation",
+        "SAW Core — Shared technical foundation across tracks"
+      ],
+      "track1Title": "Utility-Scale Solar",
+      "track1Desc": "Robot-friendly array redesign for utility-scale ground-mounted stations: scene modeling, construction simulation, core platform to on-site validation — integrating robots end-to-end into design and construction.",
+      "track2Title": "SAW Carport",
+      "track2Desc": "First public engineering demonstration scenario. Leveraging the standardized structure of commercial parking lots, we validate the feasibility of robot-friendly mounts and simplified construction workflows.",
+      "coreDescs": [
+        "Transform project sites into robot-recognizable structured scenes, identifying construction bottlenecks and constructability constraints.",
+        "Reproduce robotic construction workflows in simulation, quantifying cycle time, cost and quality to inform on-site decisions.",
+        "Collect real construction evidence on site, closing the loop between simulation and measured data for reviewable MVP validation.",
+        "Unified management of data, skills, events, and device adapters — the technical foundation across all SAW product lines."
       ]
     },
     "cta": {
@@ -201,9 +212,9 @@
       "phonePlaceholder": "13800138000",
       "projectType": "Project Type",
       "projectTypeOptions": {
-        "ground": "Utility-scale ground plant",
-        "carport": "Solar carport",
-        "rooftop": "Rooftop / distributed",
+        "ground": "Utility-Scale Solar",
+        "carport": "Solar Carport",
+        "rooftop": "Commercial Rooftop",
         "other": "Other"
       },
       "location": "Project Location",
@@ -212,18 +223,20 @@
       "scalePlaceholder": "e.g. 100MW",
       "stage": "Current Stage",
       "stageOptions": {
-        "planning": "Planning / Pre-development",
-        "design": "Design phase",
-        "construction": "Construction in progress",
-        "operation": "Operation & maintenance"
+        "opportunity": "Opportunity",
+        "feasibility": "Feasibility Study",
+        "design": "Design",
+        "procurement": "Procurement",
+        "construction": "Construction",
+        "completed": "Operation & Review"
       },
       "materials": "Existing Materials (multi-select)",
       "materialsOptions": {
-        "drawings": "Layout drawings / CAD",
-        "geotechnical": "Geotechnical report",
-        "satellite": "Satellite imagery / DEM",
-        "bom": "BoM / equipment list",
-        "none": "None yet"
+        "drawings": "Layout Drawings / CAD",
+        "geotechnical": "Geotechnical Report",
+        "satellite": "Satellite Imagery",
+        "bom": "BoM",
+        "none": "None"
       },
       "description": "Additional Notes",
       "descriptionPlaceholder": "Briefly describe your project...",
@@ -234,7 +247,10 @@
       "success": "✓ Submission Successful",
       "successDesc": "We have received your project details and will contact you within 3 business days.",
       "error": "✗ Submission Failed",
-      "required": "Required"
+      "required": "Required",
+      "consentPrefix": "I have read and agree to the",
+      "consentSuffix": ", authorizing the SAW team to process my submitted project information for joint development evaluation.",
+      "consentLinkText": "Privacy Policy"
     }
   },
   "lab": {
@@ -337,7 +353,7 @@
     "section8": {
       "title": "8. Contact",
       "content": "If you have any privacy-related questions, contact:",
-      "team": "SAW Arraywright Team",
+      "team": "SAW ArrayWright Team",
       "email": "Email: 1952902717@qq.com"
     }
   },

@@ -14,37 +14,30 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+// === 关键：layout 只返回 site-level metadata（不返回 per-page canonical/alternates）===
+// Per-page metadata 必须在每个 page.tsx 的 generateMetadata 里返回
+// 这样 next-intl layout 不会给所有子页面覆盖错位的 canonical
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const isEn = locale === "en";
-  const title = isEn ? "SAW Arraywright | Solar Array Robotic Manufacturing" : "SAW Arraywright｜光伏阵列智造计划";
-  const description = isEn
-    ? "Re-engineering solar construction for robots. SAW — project assessment, scene modeling, construction simulation, data-driven verification."
-    : "为机器人重新设计光伏建造。SAW光伏阵列智造计划 — 项目评估、场景建模、施工仿真、数据闭环。";
-  const ogImage = "https://saw.aitomoney.online/og-image.png";
   return {
     metadataBase: new URL("https://saw.aitomoney.online"),
-    title,
-    description,
-    keywords: isEn
-      ? ["solar", "photovoltaic", "robot", "smart manufacturing", "EPC", "solar plant", "SAW", "Arraywright", "solar carport", "robotic construction"]
-      : ["光伏", "太阳能", "机器人", "智能制造", "EPC", "光伏电站", "SAW", "Arraywright", "光伏车棚", "智能建造"],
-    authors: [{ name: "SAW Arraywright Team" }],
-    creator: "天伏能科 × AiToMoney",
-    publisher: "SAW Arraywright",
-    alternates: {
-      canonical: isEn ? "/en" : "/",
-      languages: { "zh-CN": "/", "en-US": "/en" },
+    title: {
+      template: isEn ? "%s | SAW ArrayWright" : "%s | SAW ArrayWright",
+      default: isEn ? "SAW ArrayWright | Solar Array Robotic Manufacturing" : "SAW ArrayWright｜光伏阵列智造计划",
     },
+    keywords: isEn
+      ? ["solar", "photovoltaic", "robot", "smart manufacturing", "EPC", "solar plant", "SAW", "ArrayWright", "solar carport", "robotic construction"]
+      : ["光伏", "太阳能", "机器人", "智能制造", "EPC", "光伏电站", "SAW", "ArrayWright", "光伏车棚", "智能建造"],
+    authors: [{ name: "SAW ArrayWright Team" }],
+    creator: "天伏能科 × AiToMoney",
+    publisher: "SAW ArrayWright",
     robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
     openGraph: {
-      title, description, type: "website",
+      type: "website",
+      siteName: "SAW ArrayWright",
       locale: isEn ? "en_US" : "zh_CN",
-      siteName: "SAW Arraywright",
-      url: isEn ? "https://saw.aitomoney.online/en" : "https://saw.aitomoney.online",
-      images: [ogImage],
     },
-    twitter: { card: "summary_large_image", title, description, images: [ogImage] },
   };
 }
 
@@ -64,7 +57,7 @@ export default async function LocaleLayout({
   const orgJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "SAW Arraywright",
+    name: "SAW ArrayWright",
     alternateName: isEn ? "Solar Array Robotic Manufacturing Initiative" : "光伏阵列智造计划",
     url: isEn ? "https://saw.aitomoney.online/en" : "https://saw.aitomoney.online",
     logo: "https://saw.aitomoney.online/logo.webp",

@@ -1,10 +1,28 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const isEn = locale === "en";
+  const title = isEn ? "Solutions — Utility-Scale & Carport" : "工程方案 — 大型地面电站与车棚";
+  const description = isEn
+    ? "SAW solutions for utility-scale ground-mounted stations and commercial solar carports. Scene modeling, robot-friendly mount design, construction simulation."
+    : "SAW 光伏工程方案：大型地面电站与商业光伏车棚两大主线。场景建模、机器人友好型支架设计、施工仿真。";
+  return {
+    title,
+    description,
+    alternates: { canonical: `/${locale}/solutions`, languages: { "zh-CN": "/zh/solutions", "en-US": "/en/solutions" } },
+    openGraph: { title, description, type: "website" },
+    twitter: { card: "summary_large_image", title, description },
+  };
+}
 
 export default async function SolutionsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("solutions");
+  const tCommon = await getTranslations("common.nav");
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-20">

@@ -1,20 +1,35 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import HeroBackground from "@/components/HeroBackground";
 import { setRequestLocale, getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const isEn = locale === "en";
+  const title = isEn ? "Robot-Friendly Solar Array Manufacturing" : "为机器人重新设计光伏建造";
+  const description = isEn
+    ? "SAW ArrayWright: project assessment, scene modeling, construction simulation, and on-site data verification for utility-scale solar and solar carport."
+    : "SAW ArrayWright 光伏阵列智造计划：项目评估、场景建模、施工仿真与现场数据闭环。大型地面电站与光伏车棚两条工程主线。";
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/${locale}`,
+      languages: { "zh-CN": "/", "en-US": "/en" },
+    },
+    openGraph: { title, description, type: "website" },
+    twitter: { card: "summary_large_image", title, description },
+  };
+}
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
-  const tNav = await getTranslations("common.nav");
 
-  const coreItems = [
-    { icon: "📊", key: "0" },
-    { icon: "🏗️", key: "1" },
-    { icon: "🤖", key: "2" },
-    { icon: "🔄", key: "3" },
-  ];
+  const coreIcons = ["📊", "🏗️", "🤖", "🔄"];
   const coreLabels = t.raw("intro.coreItems") as string[];
+  const coreDescs = t.raw("intro.coreDescs") as string[];
 
   return (
     <>
@@ -22,7 +37,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <HeroBackground />
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
           <h1 className="mb-8 text-4xl font-bold leading-[1.15] text-foreground md:text-6xl">
-            {/* 改断行：让"为机器人"成对，避免单字成行 */}
             {t("hero.title").split("机器人").map((part: string, i: number, arr: string[]) =>
               i < arr.length - 1 ? (
                 <span key={i} className="block">
@@ -37,11 +51,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               )
             )}
           </h1>
-          {/* 副标题对比度：muted → foreground/85 */}
           <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-foreground/85 md:text-xl">
             {t("hero.subtitle")}
           </p>
-          {/* CTA 主次颠倒：橙色"查看方案"为主，蓝色"提交项目"为次 */}
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link href={`/${locale}/solutions`} className="rounded-lg bg-accent-orange px-8 py-3.5 font-semibold text-white shadow-lg shadow-accent-orange/30 transition hover:bg-accent-orange/90">
               {t("hero.cta")}
@@ -50,7 +62,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               {t("hero.secondary")}
             </Link>
           </div>
-          {/* 免责小字加深背景 + 提亮文字 */}
           <p className="mt-10 inline-block rounded-md border border-foreground/10 bg-black/60 px-4 py-2 text-xs text-foreground/80 backdrop-blur-md md:text-sm">
             {t("concept.disclaimer")}
           </p>
@@ -65,8 +76,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-blue/10">
                 <svg className="h-6 w-6 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold text-foreground">{tNav("solutions")}</h3>
-              <p className="mb-4 text-muted">{t("intro.paragraph1")}</p>
+              <h3 className="mb-2 text-xl font-bold text-foreground">{t("intro.track1Title")}</h3>
+              <p className="mb-4 text-muted">{t("intro.track1Desc")}</p>
               <div className="flex items-center gap-2 text-sm text-accent-blue">
                 <span>{t("progress.label")}</span>
                 <div className="h-1 flex-1 rounded bg-border" />
@@ -77,8 +88,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-orange/10">
                 <svg className="h-6 w-6 text-accent-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5" /></svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold text-foreground">SAW Carport</h3>
-              <p className="mb-4 text-muted">{t("intro.paragraph2")}</p>
+              <h3 className="mb-2 text-xl font-bold text-foreground">{t("intro.track2Title")}</h3>
+              <p className="mb-4 text-muted">{t("intro.track2Desc")}</p>
               <div className="flex items-center gap-2 text-sm text-accent-orange">
                 <span>{locale === "zh" ? "首个MVP" : "First MVP"}</span>
                 <div className="h-1 flex-1 rounded bg-border">
@@ -96,11 +107,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <h2 className="mb-4 text-center text-3xl font-bold text-foreground">{t("intro.core")}</h2>
           <p className="mb-12 text-center text-muted">{locale === "zh" ? "两条主线共用的技术底座" : "Shared technical foundation across both tracks"}</p>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {coreItems.map((item, idx) => (
+            {coreIcons.map((icon, idx) => (
               <div key={idx} className="rounded-lg border border-border bg-card-bg p-6 transition hover:border-accent-blue/50">
-                <div className="mb-4 text-4xl">{item.icon}</div>
+                <div className="mb-4 text-4xl">{icon}</div>
                 <h3 className="mb-2 text-lg font-bold text-foreground">{coreLabels[idx]}</h3>
-                <p className="text-sm text-muted">{t("intro.paragraph1")}</p>
+                <p className="text-sm text-muted">{coreDescs[idx]}</p>
               </div>
             ))}
           </div>

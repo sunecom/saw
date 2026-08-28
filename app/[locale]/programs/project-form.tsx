@@ -5,8 +5,8 @@ import { useLocale, useTranslations } from "next-intl";
 
 export default function ProjectForm() {
   const t = useTranslations("programs.form");
-  const tCommon = useTranslations("common.nav");
   const locale = useLocale();
+  const isZh = locale === "zh";
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -16,9 +16,7 @@ export default function ProjectForm() {
   const inputClass = "w-full rounded-lg border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue";
   const labelClass = "mb-2 block text-sm font-medium text-foreground";
 
-  const isZh = locale === "zh";
-
-  // 字段键值映射（无 JS form 提交时用 value，JS 提交时用 name 显示）
+  // 字段 value 保持英文常量（提交到后端），显示用 t() 翻译
   const projectTypeOptions = [
     { value: "large-ground", key: "ground" },
     { value: "carport", key: "carport" },
@@ -26,28 +24,27 @@ export default function ProjectForm() {
     { value: "other", key: "other" },
   ];
   const stageOptions = [
-    { value: "opportunity", key: "planning" },
-    { value: "feasibility", key: "planning" },
+    { value: "opportunity", key: "opportunity" },
+    { value: "feasibility", key: "feasibility" },
     { value: "design", key: "design" },
-    { value: "procurement", key: "design" },
+    { value: "procurement", key: "procurement" },
     { value: "construction", key: "construction" },
-    { value: "completed", key: "operation" },
+    { value: "completed", key: "completed" },
   ];
   const materialOptions = [
-    { value: "总图", key: "drawings" },
-    { value: "支架图", key: "drawings" },
-    { value: "地质报告", key: "geotechnical" },
-    { value: "卫星图", key: "satellite" },
-    { value: "BoM清单", key: "bom" },
-    { value: "暂无", key: "none" },
+    { value: "drawings", key: "drawings" },
+    { value: "geotechnical", key: "geotechnical" },
+    { value: "satellite", key: "satellite" },
+    { value: "bom", key: "bom" },
+    { value: "none", key: "none" },
   ];
 
   function handleMaterialChange(item: string, checked: boolean) {
-    if (item === "暂无") {
-      setMaterials(checked ? ["暂无"] : []);
+    if (item === "none") {
+      setMaterials(checked ? ["none"] : []);
     } else {
       let newMaterials = checked ? [...materials, item] : materials.filter((m) => m !== item);
-      newMaterials = newMaterials.filter((m) => m !== "暂无");
+      newMaterials = newMaterials.filter((m) => m !== "none");
       setMaterials(newMaterials);
     }
   }
@@ -93,7 +90,7 @@ export default function ProjectForm() {
     return (
       <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-card p-8 text-center">
         <div className="mb-4 text-5xl">✅</div>
-        <h3 className="mb-2 text-2xl font-bold text-foreground">{t("success").replace("✓ ", "")}</h3>
+        <h3 className="mb-2 text-2xl font-bold text-foreground">{t("success")}</h3>
         <p className="text-muted">{t("successDesc")}</p>
       </div>
     );
@@ -115,7 +112,7 @@ export default function ProjectForm() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <label htmlFor="name" className={labelClass}>{t("name")}</label>
+            <label htmlFor="name" className={labelClass}>{t("name")} *</label>
             <input id="name" type="text" name="name" required maxLength={50} autoComplete="name" className={inputClass} placeholder={t("namePlaceholder")} />
           </div>
           <div>
@@ -126,7 +123,7 @@ export default function ProjectForm() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <label htmlFor="email" className={labelClass}>{t("email")}</label>
+            <label htmlFor="email" className={labelClass}>{t("email")} *</label>
             <input id="email" type="email" name="email" required maxLength={100} autoComplete="email" className={inputClass} placeholder={t("emailPlaceholder")} />
           </div>
           <div>
@@ -138,9 +135,9 @@ export default function ProjectForm() {
         <div>
           <label htmlFor="projectType" className={labelClass}>{t("projectType")} *</label>
           <select id="projectType" name="projectType" required className={inputClass}>
-            <option value="">{isZh ? "请选择" : "Please select"}</option>
+            <option value="">{t("pleaseSelect")}</option>
             {projectTypeOptions.map((o) => (
-              <option key={o.value} value={o.value}>{t(`projectTypeOptions.${o.key}` as any)}</option>
+              <option key={o.value} value={o.value}>{t(`projectTypeOptions.${o.key}`)}</option>
             ))}
           </select>
         </div>
@@ -159,9 +156,9 @@ export default function ProjectForm() {
         <div>
           <label htmlFor="stage" className={labelClass}>{t("stage")} *</label>
           <select id="stage" name="stage" required className={inputClass}>
-            <option value="">{isZh ? "请选择" : "Please select"}</option>
+            <option value="">{t("pleaseSelect")}</option>
             {stageOptions.map((o) => (
-              <option key={o.value} value={o.value}>{t(`stageOptions.${o.key}` as any)}</option>
+              <option key={o.value} value={o.value}>{t(`stageOptions.${o.key}`)}</option>
             ))}
           </select>
         </div>
@@ -179,7 +176,7 @@ export default function ProjectForm() {
                   onChange={(e) => handleMaterialChange(m.value, e.target.checked)}
                   className="h-4 w-4 rounded border-border bg-background text-accent-blue focus:ring-accent-blue"
                 />
-                <span className="text-sm text-foreground">{t(`materialsOptions.${m.key}` as any)}</span>
+                <span className="text-sm text-foreground">{t(`materialsOptions.${m.key}`)}</span>
               </label>
             ))}
           </div>
@@ -201,12 +198,11 @@ export default function ProjectForm() {
           />
           <input type="hidden" name="consent" value={consent ? "true" : "false"} />
           <label htmlFor="consent" className="text-sm text-muted">
-            {t("consent")}
-            {" "}
+            {t("consentPrefix")}{" "}
             <a href={`/${locale}/privacy`} className="text-accent-blue hover:underline" target="_blank">
-              {t("privacyLink")}
+              {t("consentLinkText")}
             </a>
-            {isZh ? "，授权 SAW 团队处理我提交的项目信息。" : ". I authorize the SAW team to process my submitted project information."}
+            {t("consentSuffix")}
           </label>
         </div>
 

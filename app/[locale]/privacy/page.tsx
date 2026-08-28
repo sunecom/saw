@@ -1,5 +1,26 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const isEn = locale === "en";
+  const title = isEn ? "Privacy Policy" : "隐私政策";
+  const description = isEn
+    ? "SAW ArrayWright Privacy Policy: project data collection purposes, retention period (24 months), Tianfu Nengke + AiToMoney as joint controllers, third-party processors, data rights, and contact information."
+    : "SAW ArrayWright 隐私政策：项目资料收集用途、保存期限（24个月）、天伏能科+AiToMoney共同处理者、第三方处理商、数据权利与联系方式。";
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/${locale}/privacy`,
+      languages: { "zh-CN": `/zh/privacy`, "en-US": `/en/privacy` },
+    },
+    openGraph: { title, description, type: "website" },
+    twitter: { card: "summary_large_image", title, description },
+  };
+}
+
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
