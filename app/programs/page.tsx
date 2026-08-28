@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ProjectForm from "./project-form";
 
 export const metadata: Metadata = {
   title: "联合开发与项目提交｜SAW ArrayWright",
@@ -16,9 +17,15 @@ export const metadata: Metadata = {
   },
 };
 
-import ProjectForm from "./project-form";
+export default async function ProgramsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ status?: string; msg?: string }>;
+}) {
+  const params = await searchParams;
+  const status = params?.status;
+  const msg = params?.msg;
 
-export default function ProgramsPage() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-20">
       <div className="mb-12 text-center">
@@ -49,6 +56,25 @@ export default function ProgramsPage() {
           </div>
         </div>
       </section>
+
+      {/* 表单提交结果提示（无 JS POST 场景） */}
+      {status === "success" && (
+        <div role="status" aria-live="polite" className="mb-8 rounded-lg border border-green-500/50 bg-green-500/10 p-6">
+          <h2 className="mb-2 text-xl font-bold text-green-400">✓ 提交成功</h2>
+          <p className="text-sm text-muted">
+            我们已收到您的项目资料，将在 3 个工作日内与您联系。
+            {msg && <span className="mt-2 block text-foreground">{msg}</span>}
+          </p>
+        </div>
+      )}
+      {status === "error" && (
+        <div role="alert" aria-live="assertive" className="mb-8 rounded-lg border border-red-500/50 bg-red-500/10 p-6">
+          <h2 className="mb-2 text-xl font-bold text-red-400">✗ 提交失败</h2>
+          <p className="text-sm text-muted">
+            {msg ? decodeURIComponent(msg) : "请检查填写的信息后重试。"}
+          </p>
+        </div>
+      )}
 
       {/* 项目提交表单 */}
       <section>
