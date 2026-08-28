@@ -1,0 +1,353 @@
+{
+  "metadata": {
+    "siteName": "SAW Arraywright",
+    "siteTagline": "Solar Array Robotic Manufacturing Initiative",
+    "defaultTitle": "SAW Arraywright | Solar Array Robotic Manufacturing",
+    "defaultDescription": "Re-engineering solar construction for robots. SAW — project assessment, scene modeling, construction simulation, and data-driven verification."
+  },
+  "common": {
+    "nav": {
+      "home": "Home",
+      "solutions": "Solutions",
+      "capabilities": "Capabilities",
+      "programs": "Programs",
+      "lab": "Lab"
+    },
+    "footer": {
+      "tagline": "Solar Array Robotic Manufacturing Initiative\nRe-engineering solar for robots",
+      "navigation": "Navigation",
+      "contact": "Contact",
+      "partners": "Initiated by",
+      "submit": "Submit a Project",
+      "copyright": "© 2026 SAW Arraywright. Solar Array Robotic Manufacturing Initiative. All rights reserved."
+    },
+    "skipToContent": "Skip to content",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "backToLab": "← Back to Lab"
+  },
+  "home": {
+    "hero": {
+      "title": "Re-engineering Solar Construction for Robots",
+      "subtitle": "SAW Arraywright is an integrated initiative that combines scene modeling, robot-friendly array design, construction simulation, and on-site quality evidence.",
+      "cta": "Submit a Project",
+      "secondary": "Explore Solutions"
+    },
+    "concept": {
+      "label": "AI Concept Visualization",
+      "disclaimer": "AI concept renderings do not represent delivered equipment or verified project outcomes."
+    },
+    "progress": {
+      "label": "Long-term Strategy",
+      "status": "Planning"
+    },
+    "intro": {
+      "title": "What is SAW Arraywright?",
+      "paragraph1": "Traditional solar construction is designed for human crews. We start with robots — and rebuild the array, the mounting, the workflow, and the data loop.",
+      "paragraph2": "Our goal is to make large-scale solar installation faster, more precise, and verifiable end-to-end.",
+      "core": "Core Capabilities",
+      "coreItems": [
+        "SAW Site — Scene modeling and robot constructability analysis",
+        "SAW Sim — Construction simulation and cycle-time optimization",
+        "SAW Field — On-site quality evidence and MVP verification"
+      ]
+    },
+    "cta": {
+      "title": "Have a project in mind?",
+      "description": "Whether you're an owner, EPC, designer, or component supplier — we'd like to talk about your scenario and explore how SAW can apply.",
+      "button": "Submit Project Details"
+    }
+  },
+  "solutions": {
+    "title": "Solutions",
+    "subtitle": "We design robot-friendly solar solutions for two distinct scenarios: utility-scale ground plants and commercial carport installations.",
+    "largePlant": {
+      "title": "Utility-Scale Solar Plant",
+      "stage": "Research · Scenario Definition",
+      "status": "Planning",
+      "sceneDesc": "Designed for GW-scale ground-mount arrays, providing robot-friendly array layouts and intelligent construction workflows.",
+      "challenges": "Technical Challenges",
+      "challengeItems": [
+        "Array layout optimization for complex terrain",
+        "Precision control at large construction scale",
+        "Multi-process coordination and cycle-time balance"
+      ],
+      "solutionTitle": "SAW Solutions",
+      "solutionItems": [
+        "SAW Site — Scene modeling and robot constructability analysis",
+        "SAW Sim — Construction simulation and cycle-time optimization",
+        "SAW Field — On-site quality evidence and MVP verification"
+      ],
+      "imageLabel": "Utility-scale plant scenario"
+    },
+    "carport": {
+      "title": "SAW Carport",
+      "stage": "Early Testbed · First MVP",
+      "status": "In Progress",
+      "sceneDesc": "The first public, visitable, and fast-to-MVP engineering demonstration. Solar carport with robotic construction validation.",
+      "challenges": "Technical Challenges",
+      "challengeItems": [
+        "Carport structural adaptability",
+        "Robotic operation in constrained spaces",
+        "Rapid deployment and visitability"
+      ],
+      "solutionTitle": "SAW Solutions",
+      "solutionItems": [
+        "Robot-friendly mounting design",
+        "Simplified construction workflow validation",
+        "Closed-loop data optimization"
+      ],
+      "imageLabel": "SAW Carport concept render"
+    }
+  },
+  "capabilities": {
+    "title": "Capabilities",
+    "subtitle": "Five integrated capabilities. Each is at a different maturity based on the evidence we have today.",
+    "items": {
+      "site": {
+        "subtitle": "Scene Modeling",
+        "desc": "Scene modeling, constructability and environmental constraint analysis",
+        "details": [
+          "Project data organization and preliminary scene model",
+          "Robot constructability assessment",
+          "Environmental and site condition analysis",
+          "Array layout optimization recommendations"
+        ],
+        "deliverable": "Project data organization and preliminary scene model"
+      },
+      "frame": {
+        "subtitle": "Robot-Friendly Mounting",
+        "desc": "Robot-friendly mounting, interfaces, fasteners and installation standards",
+        "details": [
+          "Standardized mounting interface definitions",
+          "Robot grasp point design",
+          "Fastener adaptation solutions",
+          "Installation process optimization"
+        ],
+        "deliverable": "Mounting interface specification and prototype design"
+      },
+      "sim": {
+        "subtitle": "Construction Simulation",
+        "desc": "Construction simulation, motion paths, cycle-time and process design",
+        "details": [
+          "Robot motion path planning",
+          "Process cycle-time analysis",
+          "Construction process simulation",
+          "Efficiency optimization"
+        ],
+        "deliverable": "Construction simulation report and process optimization recommendations"
+      },
+      "field": {
+        "subtitle": "On-site Verification",
+        "desc": "Field work packages, MVP validation, and quality evidence",
+        "details": [
+          "Field construction planning",
+          "MVP validation execution",
+          "Quality data collection and evidence",
+          "Construction effect evaluation"
+        ],
+        "deliverable": "Field MVP verification report and quality evidence"
+      },
+      "core": {
+        "subtitle": "Core Platform",
+        "desc": "Cross-project data, skills, events, and device adapters",
+        "details": [
+          "Unified data model and storage",
+          "Reusable skill module management",
+          "Event-driven state sync",
+          "Device adapter interfaces"
+        ],
+        "deliverable": "Data integration and system architecture plan"
+      }
+    },
+    "maturity": {
+      "Research": "Research",
+      "Prototype": "Prototype",
+      "Pilot": "Pilot",
+      "Deliverable": "Deliverable"
+    }
+  },
+  "programs": {
+    "title": "Programs",
+    "subtitle": "Submit your solar project details to enter the SAW evaluation process.",
+    "submitTitle": "Submit Project Details",
+    "openPrograms": {
+      "title": "Joint Development Programs",
+      "site": {
+        "name": "SAW Site",
+        "desc": "Scene modeling and robot constructability validation",
+        "status": "Open"
+      },
+      "sim": {
+        "name": "SAW Sim",
+        "desc": "Construction simulation and cycle-time analysis",
+        "status": "Coming Soon"
+      },
+      "carport": {
+        "name": "SAW Carport",
+        "desc": "Public engineering demonstration sub-project",
+        "status": "Open"
+      }
+    },
+    "form": {
+      "name": "Name *",
+      "namePlaceholder": "Your name",
+      "company": "Company",
+      "companyPlaceholder": "Company name",
+      "email": "Email *",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "13800138000",
+      "projectType": "Project Type",
+      "projectTypeOptions": {
+        "ground": "Utility-scale ground plant",
+        "carport": "Solar carport",
+        "rooftop": "Rooftop / distributed",
+        "other": "Other"
+      },
+      "location": "Project Location",
+      "locationPlaceholder": "e.g. Nanjing, Jiangsu",
+      "scale": "Project Scale",
+      "scalePlaceholder": "e.g. 100MW",
+      "stage": "Current Stage",
+      "stageOptions": {
+        "planning": "Planning / Pre-development",
+        "design": "Design phase",
+        "construction": "Construction in progress",
+        "operation": "Operation & maintenance"
+      },
+      "materials": "Existing Materials (multi-select)",
+      "materialsOptions": {
+        "drawings": "Layout drawings / CAD",
+        "geotechnical": "Geotechnical report",
+        "satellite": "Satellite imagery / DEM",
+        "bom": "BoM / equipment list",
+        "none": "None yet"
+      },
+      "description": "Additional Notes",
+      "descriptionPlaceholder": "Briefly describe your project...",
+      "consent": "I have read and agree to the Privacy Policy",
+      "privacyLink": "Privacy Policy",
+      "submit": "Submit Project Details",
+      "submitting": "Submitting...",
+      "success": "✓ Submission Successful",
+      "successDesc": "We have received your project details and will contact you within 3 business days.",
+      "error": "✗ Submission Failed",
+      "required": "Required"
+    }
+  },
+  "lab": {
+    "title": "SAW Lab",
+    "subtitle": "Research notes, engineering logs, and public records on robot-driven solar array construction.",
+    "articlesTitle": "Latest Articles",
+    "readMore": "Read more"
+  },
+  "labArticle": {
+    "sawCore": {
+      "title": "SAW Core Architecture Design Approach",
+      "summary": "SAW Core is the technical foundation of the entire solar array manufacturing initiative..."
+    },
+    "carport": {
+      "title": "SAW Carport MVP Plan",
+      "summary": "SAW Carport is the first public engineering demonstration scenario..."
+    },
+    "mount": {
+      "title": "Robot-Friendly Mounting Design Exploration",
+      "summary": "Traditional solar mounting design assumes manual installation..."
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: 2026-08-28",
+    "section1": {
+      "title": "1. Information Collection",
+      "intro": "When you submit a project through the SAW website, we collect the following information:",
+      "items": [
+        "Contact information: name, company, role, phone, email",
+        "Project information: role, type, location, scale, stage, materials, project description",
+        "Technical information: IP address, user agent, submission time"
+      ]
+    },
+    "section2": {
+      "title": "2. Use of Information",
+      "intro": "Your submitted information is used to:",
+      "items": [
+        "Evaluate whether your project is suitable for the SAW technical approach",
+        "Enable the SAW team to contact you about project collaboration",
+        "Build a project lead database for internal SAW management and follow-up"
+      ]
+    },
+    "section3": {
+      "title": "3. Information Protection",
+      "intro": "We take the following measures to protect your information:",
+      "items": [
+        "HTTPS encryption for data in transit",
+        "Data stored in a secure server environment",
+        "Only the SAW core team can access lead data",
+        "We will not sell or share your information with third parties"
+      ]
+    },
+    "section4": {
+      "title": "4. Your Rights",
+      "intro": "You have the right to:",
+      "items": [
+        "Request to view the information we have collected about you",
+        "Request correction or deletion of your information",
+        "Withdraw consent and stop us from processing your information"
+      ],
+      "contact": "To exercise these rights, contact: 1952902717@qq.com"
+    },
+    "section5": {
+      "title": "5. Data Controller and Retention",
+      "controllerIntro": "The data controllers are:",
+      "controllerItems": [
+        "Tianfu Nengke (Jiangsu Tianfu Nengke New Energy Co., Ltd.) — responsible for solar engineering and on-site data",
+        "AiToMoney — responsible for website operations and lead intake",
+        "SAW project team (jointly formed) — responsible for follow-up and product development"
+      ],
+      "retentionTitle": "Retention period:",
+      "retentionItems": [
+        "Project leads are retained for 24 months by default from the last active follow-up",
+        "Signed collaboration projects follow contractual and legal retention requirements",
+        "Closed or unfollowed leads are securely deleted within 30 days of expiry",
+        "Retention may be extended for litigation, regulatory, or compliance audit needs"
+      ],
+      "turnaroundTitle": "Response time:",
+      "turnaroundItems": [
+        "View requests: reply within 7 business days",
+        "Correction requests: completed within 7 business days",
+        "Deletion requests: completed within 15 business days",
+        "Withdrawal of consent: processing stopped within 7 business days from withdrawal"
+      ]
+    },
+    "section6": {
+      "title": "6. Third Parties and Data Sharing",
+      "intro": "Currently, SAW project data is not shared or sold to any third party. Service providers we use:",
+      "providers": [
+        "Feishu (Lark) — Project lead storage and group notifications",
+        "Alibaba Cloud / Tencent Cloud — Website hosting and operations"
+      ],
+      "outro": "The above providers access data only as necessary to provide their services and are bound by equivalent confidentiality and security obligations. If we integrate email, CRM, analytics, or third-party cloud services in the future, this policy will be updated and previously submitted leads will be notified."
+    },
+    "section7": {
+      "title": "7. Policy Updates",
+      "content": "This privacy policy may be updated from time to time."
+    },
+    "section8": {
+      "title": "8. Contact",
+      "content": "If you have any privacy-related questions, contact:",
+      "team": "SAW Arraywright Team",
+      "email": "Email: 1952902717@qq.com"
+    }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you visited does not exist or has been removed",
+    "back": "Back to Home"
+  },
+  "404": {
+    "title": "404",
+    "code": "404"
+  }
+}

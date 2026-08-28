@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
+import { setRequestLocale } from "next-intl/server";
 
 const articles: Record<string, { title: string; date: string; tags: string[]; content: string; author?: string }> = {
   "saw-core-architecture": {
@@ -94,15 +95,16 @@ export function generateStaticParams() {
   return Object.keys(articles).map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
+  const { slug, locale } = await params;
+  setRequestLocale(locale);
   const article = articles[slug];
   if (!article) return { title: "文章未找到" };
   const description = article.content.split("\n\n")[0].slice(0, 160);
   return {
     title: `${article.title}｜SAW ArrayWright`,
     description,
-    alternates: { canonical: `/lab/${slug}` },
+    alternates: { canonical: `/${locale}/lab/${slug}` },
     openGraph: {
       title: `${article.title}｜SAW ArrayWright`,
       description,
@@ -188,8 +190,9 @@ function renderMarkdown(content: string): ReactNode {
   });
 }
 
-export default async function LabPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function LabPostPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
+  const { slug, locale } = await params;
+  setRequestLocale(locale);
   const article = articles[slug];
 
   if (!article) {
@@ -219,8 +222,8 @@ export default async function LabPostPage({ params }: { params: Promise<{ slug: 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Link href="/lab" className="mb-8 inline-flex items-center gap-2 text-sm text-muted hover:text-foreground">
-        ← 返回实验室
+      <Link href={"/" + locale + "/lab"} className="mb-8 inline-flex items-center gap-2 text-sm text-muted hover:text-foreground">
+        {locale === "zh" ? "← 返回实验室" : "← Back to Lab"}
       </Link>
 
       <header className="mb-8">

@@ -1,27 +1,40 @@
 "use client";
 import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
-const navItems = [
-  { label: "解决方案", href: "/solutions" },
-  { label: "技术能力", href: "/capabilities" },
-  { label: "项目计划", href: "/programs" },
-  { label: "实验室", href: "/lab" },
-];
-
 export default function Header() {
+  const t = useTranslations("common.nav");
+  const tCommon = useTranslations("common");
+  const currentLocale = useLocale();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navItems = [
+    { label: t("home"), href: "" },
+    { label: t("solutions"), href: "/solutions" },
+    { label: t("capabilities"), href: "/capabilities" },
+    { label: t("programs"), href: "/programs" },
+    { label: t("lab"), href: "/lab" },
+  ].map((item) => ({ ...item, href: `/${currentLocale}${item.href}` }));
+
+  const switchLocale = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const nextLocale = currentLocale === "zh" ? "en" : "zh";
+    if (typeof window !== "undefined") {
+      const path = window.location.pathname.replace(/^\/(zh|en)/, "");
+      window.location.href = `/${nextLocale}${path || ""}`;
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
+          <Link href={`/${currentLocale}`} className="flex items-center gap-3">
             <img src="/logo.webp" alt="SAW ArrayWright" className="h-14 w-auto" />
-              <span className="text-sm font-medium text-muted transition hover:text-foreground">SAW ARRAYWRIGHT</span>
+            <span className="text-sm font-medium text-muted transition hover:text-foreground">SAW ARRAYWRIGHT</span>
           </Link>
 
-          {/* 桌面导航 */}
           <nav className="hidden items-center gap-8 md:flex">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href} className="text-sm font-medium text-muted transition hover:text-foreground">
@@ -31,15 +44,19 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Link href="/programs" className="hidden rounded-lg bg-accent-blue px-4 py-2 text-sm font-medium text-white transition hover:bg-accent-blue/90 md:inline-block">
-              提交项目
+            <button onClick={switchLocale} className="hidden rounded border border-border px-2 py-1 text-xs font-medium text-muted transition hover:bg-card-bg md:block">
+              {currentLocale === "zh" ? "EN" : "中"}
+            </button>
+            <Link href={`/${currentLocale}/programs`} className="hidden rounded-lg bg-accent-blue px-4 py-2 text-sm font-medium text-white transition hover:bg-accent-blue/90 md:inline-block">
+              {tCommon("footer.submit")}
             </Link>
 
-            {/* 移动端汉堡菜单 */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="flex h-12 w-12 items-center justify-center rounded-lg border border-border md:hidden"
-              aria-label="菜单" aria-expanded={mobileOpen} aria-controls="mobile-menu"
+              aria-label={mobileOpen ? tCommon("closeMenu") : tCommon("openMenu")}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
             >
               {mobileOpen ? (
                 <svg className="h-5 w-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,7 +71,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* 移动端导航菜单 */}
         {mobileOpen && (
           <nav id="mobile-menu" className="mt-4 border-t border-border/50 pt-4 md:hidden">
             <div className="flex flex-col gap-3">
@@ -68,12 +84,15 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
+              <button onClick={switchLocale} className="mx-4 rounded border border-border py-2 text-sm text-muted">
+                {currentLocale === "zh" ? "Switch to English → EN" : "切换到中文 → 中"}
+              </button>
               <Link
-                href="/programs"
+                href={`/${currentLocale}/programs`}
                 onClick={() => setMobileOpen(false)}
                 className="mt-2 rounded-lg bg-accent-blue px-4 py-2 text-center text-sm font-medium text-white transition hover:bg-accent-blue/90"
               >
-                提交项目
+                {tCommon("footer.submit")}
               </Link>
             </div>
           </nav>

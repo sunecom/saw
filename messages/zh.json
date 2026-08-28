@@ -1,0 +1,353 @@
+{
+  "metadata": {
+    "siteName": "SAW Arraywright",
+    "siteTagline": "光伏阵列智造计划",
+    "defaultTitle": "SAW Arraywright｜光伏阵列智造计划",
+    "defaultDescription": "为机器人重新设计光伏建造。SAW光伏阵列智造计划 — 项目评估、场景建模、施工仿真、数据闭环。"
+  },
+  "common": {
+    "nav": {
+      "home": "首页",
+      "solutions": "解决方案",
+      "capabilities": "技术能力",
+      "programs": "项目计划",
+      "lab": "实验室"
+    },
+    "footer": {
+      "tagline": "光伏阵列智造计划\n为机器人重新设计光伏建造",
+      "navigation": "导航",
+      "contact": "联系",
+      "partners": "发起团队",
+      "submit": "提交项目",
+      "copyright": "© 2026 SAW Arraywright. 光伏阵列智造计划. All rights reserved."
+    },
+    "skipToContent": "跳到主要内容",
+    "menu": "菜单",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "backToLab": "← 返回实验室"
+  },
+  "home": {
+    "hero": {
+      "title": "为机器人重新设计光伏建造",
+      "subtitle": "SAW Arraywright 整合了场景建模、机器人友好阵列设计、施工仿真与现场质量证据，形成可验证的智能建造体系。",
+      "cta": "提交项目",
+      "secondary": "查看方案"
+    },
+    "concept": {
+      "label": "AI 概念可视化",
+      "disclaimer": "AI 概念图不代表已交付设备或真实项目业绩。"
+    },
+    "progress": {
+      "label": "长期战略",
+      "status": "规划中"
+    },
+    "intro": {
+      "title": "什么是 SAW Arraywright？",
+      "paragraph1": "传统光伏建造为人设计。我们从机器人出发，重新设计阵列、支架、施工流程和数据闭环。",
+      "paragraph2": "目标是让大规模光伏安装更快、更精准、端到端可验证。",
+      "core": "核心能力",
+      "coreItems": [
+        "SAW Site — 场景建模与机器人可施工性分析",
+        "SAW Sim — 施工仿真与工序节拍优化",
+        "SAW Field — 现场质量证据与 MVP 验证"
+      ]
+    },
+    "cta": {
+      "title": "有项目想合作？",
+      "description": "无论您是业主、EPC、设计院还是设备与支架厂商，都欢迎与我们沟通项目场景。",
+      "button": "提交项目资料"
+    }
+  },
+  "solutions": {
+    "title": "解决方案",
+    "subtitle": "我们为大型地面电站和车棚两种典型场景提供机器人友好的光伏方案。",
+    "largePlant": {
+      "title": "大型光伏电站",
+      "stage": "Research · 研究与场景定义",
+      "status": "规划中",
+      "sceneDesc": "面向 GW 级地面电站，提供机器人友好的阵列设计与智能建造方案。",
+      "challenges": "技术挑战",
+      "challengeItems": [
+        "复杂地形下的阵列布局优化",
+        "大规模施工的精度控制",
+        "多工序协同与节拍平衡"
+      ],
+      "solutionTitle": "SAW 解决方案",
+      "solutionItems": [
+        "SAW Site — 场景建模与机器人可施工性分析",
+        "SAW Sim — 施工仿真与工序节拍优化",
+        "SAW Field — 现场质量证据与 MVP 验证"
+      ],
+      "imageLabel": "大型电站场景"
+    },
+    "carport": {
+      "title": "SAW Carport",
+      "stage": "早期试验场 · 首个 MVP",
+      "status": "进行中",
+      "sceneDesc": "首个公开、可参观、可快速 MVP 的工程示范场景。光伏车棚 + 机器人施工验证。",
+      "challenges": "技术挑战",
+      "challengeItems": [
+        "车棚结构适配性",
+        "有限空间内的机器人作业",
+        "快速部署与可参观性"
+      ],
+      "solutionTitle": "SAW 解决方案",
+      "solutionItems": [
+        "机器人友好型支架设计",
+        "简化施工工序验证",
+        "数据闭环优化"
+      ],
+      "imageLabel": "SAW Carport 概念渲染"
+    }
+  },
+  "capabilities": {
+    "title": "技术能力",
+    "subtitle": "五大能力各自独立，根据当前证据标注成熟度。",
+    "items": {
+      "site": {
+        "subtitle": "场景模型",
+        "desc": "场景建模、可施工性与环境约束分析",
+        "details": [
+          "项目数据整理与初步场景模型",
+          "机器人可施工性评估",
+          "环境约束与场地条件分析",
+          "阵列布局优化建议"
+        ],
+        "deliverable": "可提供项目数据整理和初步场景模型"
+      },
+      "frame": {
+        "subtitle": "机器人友好支架",
+        "desc": "机器人友好型支架、接口、紧固件与安装标准",
+        "details": [
+          "支架接口标准化定义",
+          "机器人抓取点设计",
+          "紧固件适配方案",
+          "安装工序优化"
+        ],
+        "deliverable": "可提供支架接口规范与原型设计方案"
+      },
+      "sim": {
+        "subtitle": "施工仿真",
+        "desc": "施工仿真、动作路径、节拍和工序设计",
+        "details": [
+          "机器人动作路径规划",
+          "工序节拍分析",
+          "施工过程仿真",
+          "效率优化方案"
+        ],
+        "deliverable": "可提供施工仿真报告与工序优化建议"
+      },
+      "field": {
+        "subtitle": "现场验证",
+        "desc": "现场工作包、MVP验证和质量证据",
+        "details": [
+          "现场施工方案制定",
+          "MVP验证计划执行",
+          "质量数据采集与证据收集",
+          "施工效果评估"
+        ],
+        "deliverable": "可提供现场MVP验证报告与质量证据"
+      },
+      "core": {
+        "subtitle": "核心平台",
+        "desc": "跨项目数据、技能、事件和设备适配器",
+        "details": [
+          "统一数据模型与存储",
+          "技能模块复用管理",
+          "事件驱动状态同步",
+          "设备适配器接口"
+        ],
+        "deliverable": "可提供数据接入与系统集成方案"
+      }
+    },
+    "maturity": {
+      "Research": "研究",
+      "Prototype": "原型",
+      "Pilot": "试点",
+      "Deliverable": "可交付"
+    }
+  },
+  "programs": {
+    "title": "项目计划",
+    "subtitle": "提交您的光伏项目资料，进入 SAW 评估流程。",
+    "submitTitle": "提交项目资料",
+    "openPrograms": {
+      "title": "联合开发计划",
+      "site": {
+        "name": "SAW Site",
+        "desc": "场景建模与机器人可施工性验证",
+        "status": "开放报名"
+      },
+      "sim": {
+        "name": "SAW Sim",
+        "desc": "施工仿真与工序节拍分析",
+        "status": "即将开放"
+      },
+      "carport": {
+        "name": "SAW Carport",
+        "desc": "公开工程示范子项目",
+        "status": "开放报名"
+      }
+    },
+    "form": {
+      "name": "姓名 *",
+      "namePlaceholder": "您的姓名",
+      "company": "公司",
+      "companyPlaceholder": "公司名称",
+      "email": "邮箱 *",
+      "emailPlaceholder": "your@email.com",
+      "phone": "电话",
+      "phonePlaceholder": "13800138000",
+      "projectType": "项目类型",
+      "projectTypeOptions": {
+        "ground": "大型地面电站",
+        "carport": "光伏车棚",
+        "rooftop": "屋顶/分布式",
+        "other": "其他"
+      },
+      "location": "项目地点",
+      "locationPlaceholder": "如：江苏省南京市",
+      "scale": "项目规模",
+      "scalePlaceholder": "如：100MW",
+      "stage": "当前阶段",
+      "stageOptions": {
+        "planning": "规划/前期",
+        "design": "设计阶段",
+        "construction": "施工进行中",
+        "operation": "运维"
+      },
+      "materials": "已有资料（多选）",
+      "materialsOptions": {
+        "drawings": "布局图/CAD",
+        "geotechnical": "地质勘察报告",
+        "satellite": "卫星图/DEM",
+        "bom": "BoM/设备清单",
+        "none": "暂无"
+      },
+      "description": "补充说明",
+      "descriptionPlaceholder": "请简要描述您的项目情况...",
+      "consent": "我已阅读并同意隐私政策",
+      "privacyLink": "隐私政策",
+      "submit": "提交项目资料",
+      "submitting": "提交中...",
+      "success": "✓ 提交成功",
+      "successDesc": "我们已收到您的项目资料，将在 3 个工作日内与您联系。",
+      "error": "✗ 提交失败",
+      "required": "必填"
+    }
+  },
+  "lab": {
+    "title": "SAW 实验室",
+    "subtitle": "发布光伏阵列自动建造、机器人友好支架、施工仿真与核心平台相关的技术研究、工程日志与公开记录。",
+    "articlesTitle": "最新文章",
+    "readMore": "阅读全文"
+  },
+  "labArticle": {
+    "sawCore": {
+      "title": "SAW Core 架构设计思路",
+      "summary": "SAW Core 是整个光伏阵列智造计划的技术底座..."
+    },
+    "carport": {
+      "title": "SAW Carport MVP 计划",
+      "summary": "SAW Carport 是 SAW 技术的首个公开工程示范场景..."
+    },
+    "mount": {
+      "title": "机器人友好型支架设计探索",
+      "summary": "传统光伏支架设计以人工安装为前提..."
+    }
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "lastUpdated": "最后更新：2026-08-28",
+    "section1": {
+      "title": "1. 信息收集",
+      "intro": "当您通过 SAW 网站提交项目资料时，我们会收集以下信息：",
+      "items": [
+        "联系人信息：姓名、公司、职务、手机、邮箱",
+        "项目信息：角色、类型、所在地、规模、阶段、已有资料、项目描述",
+        "技术信息：IP 地址、User-Agent、提交时间"
+      ]
+    },
+    "section2": {
+      "title": "2. 信息使用",
+      "intro": "您提交的信息将用于：",
+      "items": [
+        "评估您的项目是否适合 SAW 技术方案",
+        "SAW 团队与您联系，沟通项目合作事宜",
+        "形成项目线索库，用于 SAW 内部管理和跟进"
+      ]
+    },
+    "section3": {
+      "title": "3. 信息保护",
+      "intro": "我们采取以下措施保护您的信息：",
+      "items": [
+        "数据传输采用 HTTPS 加密",
+        "数据存储于安全的服务器环境",
+        "仅 SAW 核心团队可访问项目线索数据",
+        "不会将您的信息出售或分享给第三方"
+      ]
+    },
+    "section4": {
+      "title": "4. 您的权利",
+      "intro": "您有权：",
+      "items": [
+        "要求查看我们收集的您的信息",
+        "要求更正或删除您的信息",
+        "撤回授权，停止我们处理您的信息"
+      ],
+      "contact": "如需行使上述权利，请联系：1952902717@qq.com"
+    },
+    "section5": {
+      "title": "5. 数据处理责任主体与保存规则",
+      "controllerIntro": "数据处理责任主体：",
+      "controllerItems": [
+        "天伏能科（江苏天伏能科新能源有限公司）— 负责光伏工程与现场数据处理",
+        "AiToMoney — 负责网站运营与项目线索接收",
+        "SAW 项目团队（两方共同组成）— 负责具体跟进与产品开发"
+      ],
+      "retentionTitle": "保存期限：",
+      "retentionItems": [
+        "项目线索默认保存 24 个月，自您最后一次主动跟进之日起计算",
+        "已签约合作项目的数据，按合同约定与法律要求延长保存",
+        "未跟进/关闭的线索，到期后 30 天内安全删除",
+        "如法律诉讼、监管要求或合规审计需要，可依法延长保存"
+      ],
+      "turnaroundTitle": "处理时限：",
+      "turnaroundItems": [
+        "查看请求：收到后 7 个工作日内回复",
+        "更正请求：收到后 7 个工作日内完成",
+        "删除请求：收到后 15 个工作日内完成",
+        "撤回授权：自撤回之日起 7 个工作日内停止处理"
+      ]
+    },
+    "section6": {
+      "title": "6. 第三方处理与数据共享",
+      "intro": "当前阶段，SAW 项目数据不向任何第三方共享或出售。我们使用的服务提供商：",
+      "providers": [
+        "飞书（多维表格与消息通知）— 项目线索存储与群通知发送",
+        "阿里云/腾讯云服务器 — 网站部署与运行"
+      ],
+      "outro": "上述服务提供商仅在提供服务所必需的范围内接触数据，并承担同等的保密与安全义务。如未来接入邮件营销、CRM、统计分析或第三方云服务，本隐私政策将同步更新，并提前通知已提交线索的用户。"
+    },
+    "section7": {
+      "title": "7. 政策更新",
+      "content": "本隐私政策可能会不定期更新。"
+    },
+    "section8": {
+      "title": "8. 联系我们",
+      "content": "如有隐私相关问题，请联系：",
+      "team": "SAW Arraywright 团队",
+      "email": "邮箱：1952902717@qq.com"
+    }
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "description": "您访问的页面不存在或已被移除",
+    "back": "返回首页"
+  },
+  "404": {
+    "title": "404",
+    "code": "404"
+  }
+}
