@@ -3,7 +3,7 @@
     "siteName": "SAW ArrayWright",
     "siteTagline": "光伏阵列智造计划",
     "defaultTitle": "SAW ArrayWright｜光伏阵列智造计划",
-    "defaultDescription": "为机器人重新设计光伏建造。SAW光伏阵列智造计划 — 项目评估、场景建模、施工仿真、数据闭环。"
+    "defaultDescription": "SAW ArrayWright是面向机器施工的光伏工程数字底座，把光伏工程转化为机器可理解、可执行、可验证的任务体系。"
   },
   "common": {
     "nav": {
@@ -14,7 +14,7 @@
       "lab": "实验室"
     },
     "footer": {
-      "tagline": "光伏阵列智造计划\n为机器人重新设计光伏建造",
+      "tagline": "面向机器施工的光伏工程数字底座\n让光伏工程可被机器理解、执行与验证",
       "navigation": "导航",
       "contact": "联系",
       "partners": "发起团队",
@@ -29,8 +29,9 @@
   },
   "home": {
     "hero": {
-      "title": "为机器人重新设计光伏建造",
-      "subtitle": "SAW ArrayWright 整合了场景建模、机器人友好阵列设计、施工仿真与现场质量证据，形成可验证的智能建造体系。",
+      "titleLead": "面向机器施工的",
+      "titleFocus": "光伏工程数字底座",
+      "subtitle": "SAW ArrayWright把光伏工程转化为机器可理解、可执行、可验证的任务体系，持续沉淀场景、工序、接口、仿真与现场证据等数字资产。",
       "cta": "查看方案",
       "secondary": "提交项目"
     },
@@ -44,8 +45,8 @@
     },
     "intro": {
       "title": "两条核心工程主线",
-      "paragraph1": "传统光伏建造为人设计。我们从机器人出发，重新设计阵列、支架、施工流程和数据闭环。",
-      "paragraph2": "目标是让大规模光伏安装更快、更精准、端到端可验证。",
+      "paragraph1": "SAW不以首先制造完整机器人本体为目标，而是建立连接工程场景、结构、工序、设备能力与质量证据的数字底座。",
+      "paragraph2": "目标是降低各类机器进入光伏施工现场的适配成本，让施工任务可理解、可执行、可验证，并能跨项目复用。",
       "core": "核心能力",
       "coreItems": [
         "SAW Site — 场景建模与机器人可施工性分析",

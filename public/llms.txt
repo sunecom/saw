@@ -1,10 +1,10 @@
 # SAW ArrayWright 光伏阵列智造计划
 
-> 为机器人重新设计光伏建造
+> SAW ArrayWright——面向机器施工的光伏工程数字底座
 
 ## 关于 SAW
 
-SAW ArrayWright 是光伏阵列智造计划，由天伏能科与 AiToMoney 联合发起。
+SAW ArrayWright 是“光伏阵列智造计划”，由天伏能科与 AiToMoney 联合发起。SAW把光伏工程转化为机器可理解、可执行、可验证的任务体系，并持续沉淀可跨项目复用的场景、工序、接口、仿真和现场证据等数字资产。
 
 ### 核心能力
 

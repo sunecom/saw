@@ -6,10 +6,10 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const isEn = locale === "en";
-  const title = isEn ? "Robot-Friendly Solar Array Manufacturing" : "为机器人重新设计光伏建造";
+  const title = isEn ? "Digital Engineering Foundation for Machine-Built Solar" : "面向机器施工的光伏工程数字底座";
   const description = isEn
-    ? "SAW ArrayWright: project assessment, scene modeling, construction simulation, and on-site data verification for utility-scale solar and solar carport."
-    : "SAW ArrayWright 光伏阵列智造计划：项目评估、场景建模、施工仿真与现场数据闭环。大型地面电站与光伏车棚两条工程主线。";
+    ? "SAW ArrayWright turns solar engineering into tasks machines can understand, execute, and verify, while building reusable digital assets."
+    : "SAW ArrayWright是面向机器施工的光伏工程数字底座，把光伏工程转化为机器可理解、可执行、可验证的任务体系。";
   return {
     title,
     description,
@@ -37,19 +37,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <HeroBackground />
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
           <h1 className="mb-8 text-4xl font-bold leading-[1.15] text-foreground md:text-6xl">
-            {t("hero.title").split("机器人").map((part: string, i: number, arr: string[]) =>
-              i < arr.length - 1 ? (
-                <span key={i} className="block">
-                  {part}
-                  <span className="relative inline-block whitespace-nowrap">
-                    <span className="absolute -inset-x-1 inset-y-0 -z-10 rounded bg-gradient-to-r from-accent-orange/30 to-accent-blue/30 blur-md" />
-                    机器人
-                  </span>
-                </span>
-              ) : (
-                <span key={i} className="block">{part}</span>
-              )
-            )}
+            <span className="block">{t("hero.titleLead")}</span>
+            <span className="mt-2 block bg-gradient-to-r from-accent-orange to-accent-blue bg-clip-text text-transparent">
+              {t("hero.titleFocus")}
+            </span>
           </h1>
           <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-foreground/85 md:text-xl">
             {t("hero.subtitle")}

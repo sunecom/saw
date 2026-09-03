@@ -3,7 +3,7 @@
     "siteName": "SAW ArrayWright",
     "siteTagline": "Solar Array Robotic Manufacturing Initiative",
     "defaultTitle": "SAW ArrayWright | Solar Array Robotic Manufacturing",
-    "defaultDescription": "Re-engineering solar construction for robots. SAW — project assessment, scene modeling, construction simulation, and data-driven verification."
+    "defaultDescription": "SAW ArrayWright is the digital engineering foundation for machine-built solar, turning solar projects into tasks machines can understand, execute, and verify."
   },
   "common": {
     "nav": {
@@ -14,7 +14,7 @@
       "lab": "Lab"
     },
     "footer": {
-      "tagline": "Solar Array Robotic Manufacturing Initiative\nRe-engineering solar for robots",
+      "tagline": "The digital engineering foundation for machine-built solar\nMaking solar work understandable, executable, and verifiable by machines",
       "navigation": "Navigation",
       "contact": "Contact",
       "partners": "Initiated by",
@@ -29,8 +29,9 @@
   },
   "home": {
     "hero": {
-      "title": "Re-engineering Solar Construction for Robots",
-      "subtitle": "SAW ArrayWright is an integrated initiative that combines scene modeling, robot-friendly array design, construction simulation, and on-site quality evidence.",
+      "titleLead": "The Digital Engineering Foundation for",
+      "titleFocus": "Machine-Built Solar",
+      "subtitle": "SAW ArrayWright turns solar engineering into tasks machines can understand, execute, and verify, while building reusable digital assets from scenes, workflows, interfaces, simulations, and field evidence.",
       "cta": "Explore Solutions",
       "secondary": "Submit a Project"
     },
@@ -44,8 +45,8 @@
     },
     "intro": {
       "title": "Two Core Engineering Tracks",
-      "paragraph1": "Traditional solar construction is designed for human crews. We start with robots — and rebuild the array, the mounting, the workflow, and the data loop.",
-      "paragraph2": "Our goal is to make large-scale solar installation faster, more precise, and verifiable end-to-end.",
+      "paragraph1": "SAW does not begin by building a complete robot. It builds the digital foundation connecting project scenes, structures, workflows, machine capabilities, and quality evidence.",
+      "paragraph2": "The goal is to reduce the engineering cost of bringing different machines into solar construction, making each task understandable, executable, verifiable, and reusable across projects.",
       "core": "Core Capabilities",
       "coreItems": [
         "SAW Site — Scene modeling and robot constructability analysis",

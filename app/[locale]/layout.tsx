@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     metadataBase: new URL("https://saw.aitomoney.online"),
     title: {
       template: isEn ? "%s | SAW ArrayWright" : "%s | SAW ArrayWright",
-      default: isEn ? "SAW ArrayWright | Solar Array Robotic Manufacturing" : "SAW ArrayWright｜光伏阵列智造计划",
+      default: isEn ? "SAW ArrayWright | Digital Engineering Foundation for Machine-Built Solar" : "SAW ArrayWright｜面向机器施工的光伏工程数字底座",
     },
     keywords: isEn
       ? ["solar", "photovoltaic", "robot", "smart manufacturing", "EPC", "solar plant", "SAW", "ArrayWright", "solar carport", "robotic construction"]
@@ -62,8 +62,8 @@ export default async function LocaleLayout({
     url: isEn ? "https://saw.aitomoney.online/en" : "https://saw.aitomoney.online",
     logo: "https://saw.aitomoney.online/logo.webp",
     description: isEn
-      ? "Re-engineering solar construction for robots. Project assessment, scene modeling, construction simulation, data-driven verification."
-      : "为机器人重新设计光伏建造。项目评估、场景建模、施工仿真、数据闭环。",
+      ? "The digital engineering foundation for machine-built solar, turning solar projects into tasks machines can understand, execute, and verify."
+      : "面向机器施工的光伏工程数字底座，把光伏工程转化为机器可理解、可执行、可验证的任务体系。",
     founder: [{ "@type": "Organization", name: "天伏能科" }, { "@type": "Organization", name: "AiToMoney" }],
     areaServed: "CN",
     serviceType: isEn
